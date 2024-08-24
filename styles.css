@@ -181,7 +181,7 @@ footer {
 /* Speakers Section*/
 #speakers {
     padding: 50px 20px;
-    background-color: #f7f7f7;
+    background-color: white;
     color: #333;
     text-align: center;
 }
@@ -266,7 +266,7 @@ footer {
 /* Exhibition Section */
 #exhibition {
     padding: 50px 20px;
-    background-color: #f7f7f7;
+    background-color: white;
     color: #333;
     text-align: center;
 }
@@ -344,7 +344,7 @@ footer {
 /* About Section */
 .about-section {
     padding: 80px 20px;
-    background-color: #f7f7f7;
+    background-color: white;
     color: #333;
     text-align: center;
 }
@@ -452,7 +452,7 @@ footer {
 /* Partners */
 #partners {
     padding: 50px 20px;
-    background-color: #f7f7f7;
+    background-color: white;
     color: #333;
     text-align: center;
 }
@@ -511,7 +511,7 @@ footer {
 /* Contact us*/
 #contact {
     padding: 50px 20px;
-    background-color: #f7f7f7;
+    background-color: white;
     color: #333;
     text-align: center;
 }
@@ -527,7 +527,7 @@ footer {
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
-    animation: fadeInUp 2s ease-out forwards;
+    /* animation: fadeInUp 2s ease-out forwards; */
 
 }
 
