@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <title>TEDxNapierBridge</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -19,18 +25,19 @@
     
     <header>
         <div class="logo">
-            <span class="ted">TED<sup>x</sup></span>NapierBridge</br>
-            <div class="ted_div"><span class="ted_span">x</span> = independently organized TED event</div>
+            <!-- <span class="ted">TED<sup>x</sup></span>NapierBridge</br>
+            <div class="ted_div"><span class="ted_span">x</span> = independently organized TED event</div> -->
+            <img src="images/tedx_logo.jpg" alt="TEDxNapier Bridge | A globally recognized TEDx event in Chennai, India" />
         </div>        
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#speakers">Speakers</a></li>
-                <li><a href="#exhibition">Exhibition</a></li>
+                <!-- <li><a href="#exhibition">Exhibition</a></li> -->
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#past-events">Past Events</a></li>
                 <li><a href="#partners">Partners</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <!-- <li><a href="#contact">Contact Us</a></li> -->
             </ul>
         </nav>               
         <div class="hamburger-menu">
@@ -51,7 +58,7 @@
         </label>
       </div> -->
     <!-- Home Page -->
-    <section id="home" class="landing-screen">
+    <!-- <section id="home" class="landing-screen">
         <div class="content">
             <h1>Welcome to TEDxNapierBridge</h1>
             <p>Uniting Ideas, Inspiring Change</p>
@@ -59,11 +66,33 @@
             <a href="#about" class="button">Learn More</a>
             <a href="#contact" class="button">Contact Us</a>
         </div>
+    </section> -->
+    <section id="home" class="exhibition-section">
+        <div class="section-header">
+            <h2>Upcoming Event at TEDxNapier Bridge - TruthCon | Apr 2024</h2>
+        </div>
+        <!-- <h2></h2> -->
+        <div class="exhibition-content">
+            <img src="images/exhibition.jpg" alt="Exhibition Image" class="exhibition-image">
+            <p>Free entry to exhibition on Apr 27 & Apr 28</p>
+            <p>An open-to-all exhibition exploring the nuances of how misinformation affects our lives and the role AI plays in both its creation and mitigation. Walk through a plethora of interactive exhibits to gain valuable insights into the underlying structures that fuel misinformation and its tangible impacts on our lives.</p>
+            <ul>
+                <li>Interactive and thought-provoking exhibits</li>
+                <li>Learn gamified ways to build resistance against misinformation</li>
+                <li>Opportunity to network with diverse individuals</li>
+            </ul>
+            <p><strong>Date and Time:</strong> Apr 27 (3.00pm - 7.00pm) & Apr 28 (10.30am - 6.30pm)</p>
+            <p><strong>Venue:</strong> Kamarajar Arangam, Anna Salai</p>
+            <a href="https://bit.ly/truthcon-tedx" class="register-now-button">REGISTER NOW FOR FREE</a>
+        </div>
     </section>
 
     <!-- Speakers -->
     <section id="speakers" class="speaker-section">
-        <h2>Speakers and Performers of TruthCon 2024</h2>
+        <div class="section-header">
+            <h2>Speakers and Performers of TruthCon 2024</h2>
+        </div>
+        <!-- <h2></h2> -->
         <div class="speakers-container">
             <div class="speaker-card">
                 <div class="card-front">
@@ -115,57 +144,30 @@
     
     
     <!-- Exhibition -->
-    <section id="exhibition" class="exhibition-section">
-        <h2>Exhibition at TEDxNapier Bridge TruthCon | Apr 2024</h2>
-        <div class="exhibition-content">
-            <img src="images/exhibition.jpg" alt="Exhibition Image" class="exhibition-image">
-            <p>Free entry to exhibition on Apr 27 & Apr 28</p>
-            <p>An open-to-all exhibition exploring the nuances of how misinformation affects our lives and the role AI plays in both its creation and mitigation. Walk through a plethora of interactive exhibits to gain valuable insights into the underlying structures that fuel misinformation and its tangible impacts on our lives.</p>
-            <ul>
-                <li>Interactive and thought-provoking exhibits</li>
-                <li>Learn gamified ways to build resistance against misinformation</li>
-                <li>Opportunity to network with diverse individuals</li>
-            </ul>
-            <p><strong>Date and Time:</strong> Apr 27 (3.00pm - 7.00pm) & Apr 28 (10.30am - 6.30pm)</p>
-            <p><strong>Venue:</strong> Kamarajar Arangam, Anna Salai</p>
-            <a href="https://bit.ly/truthcon-tedx" class="register-now-button">REGISTER NOW FOR FREE</a>
-        </div>
-    </section>
+    
 
     <!-- About us -->
     <section id="about" class="about-section">
         <div class="container">
-            <h2>About Us</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">What We Do <i class="fas fa-plus"></i></h3>
-                    <div class="accordion-content">
-                        <ul>
-                            <li><i class="fas fa-microphone-alt"></i>   Showcase Exceptional Speakers: We feature a diverse lineup of speakers who are leaders, innovators, and change-makers. Each talk is designed to ignite thought and provoke discussion.</li>
-                            <li><i class="fas fa-handshake"></i>  Create a Collaborative Platform: We provide a space for ideas to intersect and flourish. Our events are a melting pot of perspectives where meaningful conversations and connections are made.</li>
-                            <li><i class="fas fa-globe"></i>  Empower Local and Global Communities: Through our events, we aim to empower individuals and communities to take actionable steps towards positive change.</li>
-                        </ul>
-                    </div>
+            <div class="section-header">
+                <h2>About TEDxNapierBridge</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p style="text-align: left;">TEDxNapierBridge is an independently organized TED event, designed to bring people together to share a TED-like experience. At TEDxNapierBridge events, TED Talks video and live speakers combine to spark deep discussion and connection in a small group. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.</p>
                 </div>
-                <!-- <div class="accordion-item">
-                    <h3 class="accordion-header">Join Us <i class="fas fa-plus"></i></h3>
-                    <div class="accordion-content">
-                        <p>Be a part of our dynamic community and experience the magic of TEDxNapierBridge. Whether you’re a curious thinker, a passionate advocate, or just someone looking to be inspired, our events offer something for everyone.</p>
-                        <p>Explore our past events, meet our incredible speakers, and stay tuned for upcoming talks that will challenge your thinking and broaden your horizons.</p>
-                    </div>
-                </div> -->
-                <div class="accordion-item">
-                    <h3 class="accordion-header">Who We Are <i class="fas fa-plus"></i></h3>
-                    <div class="accordion-content">
-                        <img src="images/team.jpg" alt="Team Image" class="team-image">
-                        <p>Established in 2015 - TEDxNapierBridge | An Independently Organized TEDx Event in Chennai, India.</p>
-                    </div>
+                <div class="about-image">
+                    <img src="images/about_ted.jpg" alt="About TEDxNapierBridge">
                 </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header">Our Vision <i class="fas fa-plus"></i></h3>
-                    <div class="accordion-content">
-                        <p>Our vision is to be a beacon of inspiration and innovation, fostering a community where diverse perspectives converge to spark meaningful conversations and drive impactful change. We aim to create a platform where ideas flourish, creativity thrives, and solutions emerge for a better world. Through our events, we seek to empower individuals and communities to envision and act upon a brighter future.</p>
-                    </div>
+            </div>
+            <div class="about-subcontent">
+                <div class="about-vision">
+                    <h3>Our Vision</h3>
+                    <p>TEDxNapierBridge envisions a community where passionate individuals, driven by ideas and creativity, come together to inspire change, ignite conversations, and foster innovation. Through our platform, we aim to showcase the best of human ingenuity, celebrate diverse voices, and spark transformative ideas that resonate with the local and global community.</p>
+                </div>
+                <div class="about-mission">
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to curate events that serve as a catalyst for change, creativity, and innovation. By providing a stage for compelling stories, groundbreaking ideas, and thought-provoking discussions, we aim to empower individuals to take action and make a positive impact on society.</p>
                 </div>
             </div>
         </div>
@@ -173,10 +175,54 @@
     
     <!-- Past Events -->
     <!-- <section id="past-events"></section> -->
+    <section id="past-events" class="past-events-section">
+        <div class="container">
+            <h2>Past Events</h2>
+            <div class="events-grid">
+                <a href="https://www.youtube.com/watch?v=H6WshAeXlNY&list=PLiBX9q1fO8uvBN_L0XJQNCCR09JXaIkpb" class="event-card" target="_blank">
+                    <img src="images/event-image-1.jpg" alt="Event Image 1">
+                    <div class="event-info">
+                        <h3>Theme: Think, become</h3>
+                        <p>August 11, 2019</p>
+                        <p>We aim to showcase how cause leads to an effect, how thought transforms into action via TEDxNapierBridge2019's theme: Think, become.</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=XTXlYpwBQ8c&list=PLsRNoUx8w3rMW_1VyzViFWvUjnqfhEmMG" class="event-card" target="_blank">
+                    <img src="images/event-image-2.jpg" alt="Event Image 2">
+                    <div class="event-info">
+                        <h3>Theme: Please Turn Over</h3>
+                        <p>September 16, 2018</p>
+                        <p>We need to only say “Please Turn Over” because India is in the midst of a global remaking.</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=HzJU7UTCTgg&pp=ygUQdGVkeG5hcGllcmJyaWRnZQ%3D%3D" class="event-card" target="_blank">
+                    <img src="images/event-image-3.jpg" alt="Event Image 3">
+                    <div class="event-info">
+                        <h3>Theme: Turning Vision Into Reality</h3>
+                        <p>August 27, 2023</p>
+                        <p>Countdown is a global initiative, powered by TED and Future Stewards, that aims to accelerate solutions to the climate crisis. The goal is to cut greenhouse gas emissions in half by 2030 towards reaching net-zero by 2050.</p>
+                    </div>
+                </a>
+                <!-- <a href="https://www.youtube.com/watch?v=Z89f1QuRq10&list=PLsRNoUx8w3rNZvytjLN0OHd3CP7xjoL9v" class="event-card" target="_blank">
+                    <img src="event-image-4.jpg" alt="Event Image 4">
+                    <div class="event-info">
+                        <h3>Event Title 4</h3>
+                        <p>Event Date</p>
+                        <p>Short description of the event, highlighting the theme and key aspects.</p>
+                    </div>
+                </a> -->
+                <!-- Add more event cards as needed -->
+            </div>
+        </div>
+    </section>
+    
+    
 
     <!-- Partners -->
     <section id="partners" class="partner-section">
-        <h2>Partners of our TEDxNapier Bridge TruthCon | Apr 2024</h2>
+        <div class="section-header">
+            <h2>Partners of our TEDxNapier Bridge TruthCon | Apr 2024</h2>
+        </div>
         <div class="partners-container">
             <div class="partner-image left">
                 <img src="images/1.png" alt="Partner 1">
