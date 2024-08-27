@@ -28,7 +28,7 @@ header {
     align-items: center;
     padding: 20px;
     background-color: #fff;
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -176,35 +176,40 @@ footer {
     /* padding: 20px; */
     background-color: #fff;
     color: #333;
-    position: fixed;
+    position: relative;
     bottom: 10px;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Speakers Section*/
-#speakers {
-    padding: 50px 20px;
-    background-color: white;
-    color: #333;
+/* Basic Styles */
+.speaker-section {
+    color: #fff;
+    padding: 20px;
     text-align: center;
 }
 
+.section-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #E62B1E; /* TEDx Red for the header */
+}
+
+/* Speakers Container */
 .speakers-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    animation: glideIn 1s ease-out;
+    gap: 30px;
 }
 
+/* Speaker Card Styles */
 .speaker-card {
-    width: 250px;
-    height: 300px;
-    perspective: 1000px;
-    margin: 0 auto;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: none;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px; /* 3D Perspective */
 }
 
 .card-front,
@@ -219,64 +224,69 @@ footer {
 }
 
 .card-front {
-    background: #fff;
-    color: #333;
+    color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: 1em;
-    font-weight: bold;
+    align-items: center;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .card-front img {
-    width: 100px;
-    height: 100px;
+    width: 80%;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card-front h2 {
+    font-size: 1.5em;
 }
 
 .card-back {
-    background: #fff;
-    color: #333;
+    background-color: #E62B1E; /* Red back for contrast */
+    color: #fff;
     transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    box-sizing: border-box;
     text-align: left;
-    font-size: small;
+    font-size: 0.9em;
 }
 
 .speaker-card:hover .card-front {
-    transform: rotateY(-180deg);
+    transform: rotateY(180deg);
 }
 
 .speaker-card:hover .card-back {
-    transform: rotateY(0deg);
+    transform: rotateY(0);
 }
 
-@keyframes glideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+/* Responsive Design */
+@media (max-width: 768px) {
+    .speakers-container {
+        flex-direction: column;
+        align-items: center;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .speaker-card {
+        width: 80%;
+        margin-bottom: 30px;
     }
 }
+
 
 /* Exhibition Section */
 #home.exhibition-section {
     
     display: flex;
     flex-direction: column;
-    padding: 50px 20px;
+    padding: 20px;
     background-color: white;
     color: #333;
     text-align: center;
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
 }
 
 .exhibition-section .section-header h2 {
@@ -481,7 +491,7 @@ footer {
     }
 }
 .about-section {
-    padding: 60px 20px;
+    padding: 20px;
     color: #fff;
 }
 
@@ -567,56 +577,63 @@ footer {
     text-align: center;
 }
 
+.section-header h2 {
+    margin: 0;
+}
+
 .partners-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    animation: glideIn 1s ease-out;
-}
-
-.partner-image {
-    width: 80%;
-    /* max-width: 600px; */
-    overflow: hidden;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.partner-image:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.partner-image img {
+    overflow: hidden; /* Hide overflow */
+    position: relative;
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
 }
 
-@keyframes glideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+.partner-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: marquee 15s linear infinite; /* Adjust duration as needed */
+    width: 100%;
+}
+
+.content_holder {
+    width: 150px; /* Adjust for square boxes */
+    height: 150px; /* Ensure the box is square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white; /* White background for the box */
+    border: 1px solid #ddd; /* Optional border for visual separation */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for depth */
+    overflow: hidden; /* Ensures content doesn't overflow */
+    border-radius: 8px; /* Optional rounded corners */
+    box-sizing: border-box; /* Ensures padding/border does not affect size */
+    flex-shrink: 0; /* Prevents shrinking */
+    margin: 10px; /* Spacing between boxes */
+}
+
+.partner_card_link_small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image-41 {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures images are centered and maintain aspect ratio */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    100% {
+        transform: translateX(-100%);
     }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* Contact us*/
 #contact {
@@ -654,7 +671,7 @@ footer {
 
 .past-events-section {
     background-color: #ffffff;
-    padding: 50px 0;
+    padding: 20px;
 }
 
 .past-events-section .container {
@@ -764,3 +781,146 @@ footer {
     }
 }
 
+/* partners new css*/
+.partners {
+    background: #000;
+    padding: 20px;
+    color: #fff;
+}
+.section-title {
+    text-align: center;
+    color: #e62b1e;
+    font-size: 36px;
+    margin-bottom: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.partner-category {
+    margin-bottom: 50px;
+}
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.partner-logo {
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.partner-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Talks Section Styling */
+.talks-section {
+    padding: 20px;
+    background-color: #fff; /* White background */
+    color: #333;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: #e62b1e; /* TEDx red color */
+    margin: 0;
+}
+
+/* Intro Text */
+.talks-intro {
+    margin-bottom: 40px; /* Space between the intro and the talks */
+}
+
+.talks-intro h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.talks-intro p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #666;
+}
+
+.talks-intro p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Talks Container */
+.talks-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between the talks */
+}
+
+/* Individual Talk Item */
+.talk-item {
+    width: 30%; /* 3 videos per row */
+    background-color: #f9f9f9; /* Light gray background for each talk */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.talk-info {
+    padding: 20px;
+}
+
+.talk-info h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.talk-info p {
+    font-size: 1rem;
+    margin: 0;
+    color: #666;
+}
+
+/* Hover Effects */
+.talk-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .talk-item {
+        width: 45%; /* 2 videos per row for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .talk-item {
+        width: 100%; /* 1 video per row for mobile devices */
+    }
+}
