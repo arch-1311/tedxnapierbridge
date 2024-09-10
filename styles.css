@@ -10,7 +10,7 @@ body {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   margin: 0;
   transition: background 0.2s linear;
 }
@@ -296,12 +296,12 @@ footer {
 }
 
 .exhibition-content {
-    max-width: 800px; /* Limit the width */
+    /*max-width: 800px; Limit the width */
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     animation: fadeInUp 1s ease-out;
 }
 
@@ -591,7 +591,7 @@ footer {
 .partner-grid {
     display: flex;
     flex-wrap: nowrap;
-    animation: marquee 15s linear infinite; /* Adjust duration as needed */
+     animation: marquee 20s linear infinite; /* Adjust duration as needed */
     width: 100%;
 }
 
@@ -634,6 +634,32 @@ footer {
     }
 }
 
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .content_holder {
+        width: 120px; /* Adjust for medium screens */
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content_holder {
+        width: 100px; /* Adjust for small screens */
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content_holder {
+        width: 65px; /* Adjust for extra small screens */
+        height: 70px;
+    }
+
+    .partner-grid {
+        animation: marquee 30s linear infinite; /* Adjust speed for smaller screens */
+    }
+}
+
 
 /* Contact us*/
 #contact {
@@ -659,14 +685,14 @@ footer {
 }
 
 .contact-icon {
-    color: #333;
+    color: #000;
     font-size: 2em;
     transition: transform 0.3s, color 0.3s;
 }
 
 .contact-icon:hover {
     transform: scale(1.2);
-    color: #e62b1e;
+    color: #E62B1E;
 }
 
 .past-events-section {
@@ -924,3 +950,4 @@ footer {
         width: 100%; /* 1 video per row for mobile devices */
     }
 }
+
