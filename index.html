@@ -179,47 +179,72 @@
     </section>
     
     <!-- Past Events -->
-    <!-- <section id="past-events"></section> -->
     <section id="past-events" class="past-events-section">
         <div class="container">
             <h2>Past Events</h2>
-            <div class="events-grid">
-                <a href="https://www.ted.com/tedx/events/34059" class="event-card" target="_blank">
-                    <img src="images/event-image-1.jpg" alt="Event Image 1">
-                    <div class="event-info">
-                        <h3>Theme: Think, become</h3>
-                        <p>August 11, 2019</p>
-                        <p>We aim to showcase how cause leads to an effect, how thought transforms into action via TEDxNapierBridge2019's theme: Think, become.</p>
-                    </div>
-                </a>
-                <a href="https://www.ted.com/tedx/events/30912" class="event-card" target="_blank">
-                    <img src="images/event-image-2.jpg" alt="Event Image 2">
-                    <div class="event-info">
-                        <h3>Theme: Please Turn Over</h3>
-                        <p>September 16, 2018</p>
-                        <p>We need to only say “Please Turn Over” because India is in the midst of a global remaking.</p>
-                    </div>
-                </a>
-                <a href="https://www.ted.com/tedx/events/53613" class="event-card" target="_blank">
-                    <img src="images/event-image-3.jpg" alt="Event Image 3">
-                    <div class="event-info">
-                        <h3>Theme: Turning Vision Into Reality</h3>
-                        <p>August 27, 2023</p>
-                        <p>Countdown is a global initiative, powered by TED and Future Stewards, that aims to accelerate solutions to the climate crisis. The goal is to cut greenhouse gas emissions in half by 2030 towards reaching net-zero by 2050.</p>
-                    </div>
-                </a>
-                <!-- <a href="https://www.youtube.com/watch?v=Z89f1QuRq10&list=PLsRNoUx8w3rNZvytjLN0OHd3CP7xjoL9v" class="event-card" target="_blank">
-                    <img src="event-image-4.jpg" alt="Event Image 4">
-                    <div class="event-info">
-                        <h3>Event Title 4</h3>
-                        <p>Event Date</p>
-                        <p>Short description of the event, highlighting the theme and key aspects.</p>
-                    </div>
-                </a> -->
-                <!-- Add more event cards as needed -->
-            </div>
+        <div class="filter-section">
+           
+        <label for="year-select">Year:</label>
+        <select id="year-select" onchange="filterEvents()">
+            <option value="all">All</option>
+            <option value="2023">2023</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+        </select>
+
+        <label for="event-select">Event:</label>
+        <select id="event-select" onchange="filterEvents()">
+            <option value="all">All</option>
+            <option value="Think, become">Think, become</option>
+            <option value="Please Turn Over">Please Turn Over</option>
+            <option value="Turning Vision Into Reality">Turning Vision Into Reality</option>
+        </select>
+
+        <label for="topic-select">Topic:</label>
+        <select id="topic-select" onchange="filterEvents()">
+            <option value="all">All</option>
+            <option value="Climate Crisis">Climate Crisis</option>
+            <option value="Social Change">Social Change</option>
+        </select>
+    </div>
+
+    <!-- Event Section -->
+        <div class="events-grid" id="events-grid">
+            <a href="https://www.ted.com/tedx/events/34059" class="event-card" data-year="2019" data-event="Think, become" data-topic="Social Change">
+                <img src="images/event-image-1.jpg" alt="Event Image 1">
+                <div class="event-info">
+                    <h3>Theme: Think, become</h3>
+                    <p>August 11, 2019</p>
+                    <p>We aim to showcase how cause leads to an effect, how thought transforms into action via TEDxNapierBridge2019's theme: Think, become.</p>
+                </div>
+            </a>
+            <a href="https://www.ted.com/tedx/events/30912" class="event-card" data-year="2018" data-event="Please Turn Over" data-topic="Social Change">
+                <img src="images/event-image-2.jpg" alt="Event Image 2">
+                <div class="event-info">
+                    <h3>Theme: Please Turn Over</h3>
+                    <p>September 16, 2018</p>
+                    <p>We need to only say “Please Turn Over” because India is in the midst of a global remaking.</p>
+                </div>
+            </a>
+            <a href="https://www.ted.com/tedx/events/53613" class="event-card" data-year="2023" data-event="Turning Vision Into Reality" data-topic="Climate Crisis">
+                <img src="images/event-image-3.jpg" alt="Event Image 3">
+                <div class="event-info">
+                    <h3>Theme: Turning Vision Into Reality</h3>
+                    <p>August 27, 2023</p>
+                    <p>Countdown is a global initiative, powered by TED and Future Stewards, that aims to accelerate solutions to the climate crisis.</p>
+                </div>
+            </a>
+            <a href="https://www.ted.com/tedx/events/59421" class="event-card" data-year="2024" data-event="Ways of Seeing" data-topic="Photography">
+                <img src="images/event-image-4.jpg" alt="Event Image 4">
+                <div class="event-info">
+                    <h3>Theme: InFocus: Ways of Seeing</h3>
+                    <p>September 29, 2024</p>
+                    <p>Photos are more than just pictures; they are windows into our memories, emotions, and stories. They surround us, capturing the world in fragments that tell a thousand untold tales. But does something that's out of sight truly vanish from our thoughts?</p>
+                </div>
+            </a>
         </div>
-    </section> 
+    </div>
+    </section>
     
     <!-- Talks section -->
     <section id="talks" class="talks-section">
