@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <title>TEDxNapierBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div> -->
+    
+    <header>
+        <!-- Top Row with Vision and Social Media -->
+        <div class="top-row">
+            <div class="vision">
+                <span>Our vision is to be a catalyst for positive change, opening minds with inspiring ideas.</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/TEDxNapierBridge/"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/tedxnapierbridge/"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/tedxnapier"><i class="bi bi-twitter"></i></a>
+                <a href="mailto:team@tedxnapierbridge.com"><i class="bi bi-envelope"></i></a>
+            </div>
+        </div>
+        
+        <!-- Bottom Row with Logo, Navigation, and Donate -->
+        <div class="bottom-row">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#"><strong>TED</strong><span>xNapierBridge</span></a>
+            </div>
+    
+            <!-- Navigation -->
+            <nav>
+                <ul class="menu">
+                  <li><a href="home.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="no-link">About <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="team.html">Team</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="attend.html">Attend</a></li>
+                  <li><a href="watch.html">Watch</a></li>
+                  <li><a href="past-events.html">Past Events</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="no-link">Connect <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="donate.html">Donate</a></li>
+                      <li><a href="volunteer.html">Volunteer</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="no-link">Partners <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="current-partners.html">Current Partners</a></li>
+                      <li><a href="become-partner.html">Become a Partner</a></li>
+                    </ul>
+                  </li>
+                </ul>
+            </nav>
+              
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <!-- Donate Button -->
+            <div class="donate-btn">
+                <a href="#">DONATE</a>
+            </div>
+        </div>
+    </header>
+        
+    <main style="max-width: 950px;">
+<!-- Past Events -->
+<section id="past-events" class="past-events-section">
+    <div class="container">
+        <h2>Past Events</h2>
+    <div class="filter-section">
+       
+    <label for="year-select">Year:</label>
+    <select id="year-select" onchange="filterEvents()">
+        <option value="all">All</option>
+        <option value="2023">2023</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+    </select>
+
+    <label for="event-select">Event:</label>
+    <select id="event-select" onchange="filterEvents()">
+        <option value="all">All</option>
+        <option value="Think, become">Think, become</option>
+        <option value="Please Turn Over">Please Turn Over</option>
+        <option value="Turning Vision Into Reality">Turning Vision Into Reality</option>
+    </select>
+
+    <label for="topic-select">Topic:</label>
+    <select id="topic-select" onchange="filterEvents()">
+        <option value="all">All</option>
+        <option value="Climate Crisis">Climate Crisis</option>
+        <option value="Social Change">Social Change</option>
+    </select>
+</div>
+
+<!-- Event Section -->
+    <div class="events-grid" id="events-grid">
+        <a href="https://www.ted.com/tedx/events/34059" class="event-card" data-year="2019" data-event="Think, become" data-topic="Social Change">
+            <img src="images/event-image-1.jpg" alt="Event Image 1">
+            <div class="event-info">
+                <h3>Theme: Think, become</h3>
+                <p>August 11, 2019</p>
+                <p>We aim to showcase how cause leads to an effect, how thought transforms into action via TEDxNapierBridge2019's theme: Think, become.</p>
+            </div>
+        </a>
+        <a href="https://www.ted.com/tedx/events/30912" class="event-card" data-year="2018" data-event="Please Turn Over" data-topic="Social Change">
+            <img src="images/event-image-2.jpg" alt="Event Image 2">
+            <div class="event-info">
+                <h3>Theme: Please Turn Over</h3>
+                <p>September 16, 2018</p>
+                <p>We need to only say “Please Turn Over” because India is in the midst of a global remaking.</p>
+            </div>
+        </a>
+        <a href="https://www.ted.com/tedx/events/53613" class="event-card" data-year="2023" data-event="Turning Vision Into Reality" data-topic="Climate Crisis">
+            <img src="images/event-image-3.jpg" alt="Event Image 3">
+            <div class="event-info">
+                <h3>Theme: Turning Vision Into Reality</h3>
+                <p>August 27, 2023</p>
+                <p>Countdown is a global initiative, powered by TED and Future Stewards, that aims to accelerate solutions to the climate crisis.</p>
+            </div>
+        </a>
+        <a href="https://www.ted.com/tedx/events/59421" class="event-card" data-year="2024" data-event="Ways of Seeing" data-topic="Photography">
+            <img src="images/event-image-4.jpg" alt="Event Image 4">
+            <div class="event-info">
+                <h3>Theme: InFocus: Ways of Seeing</h3>
+                <p>September 29, 2024</p>
+                <p>Photos are more than just pictures; they are windows into our memories, emotions, and stories. They surround us, capturing the world in fragments that tell a thousand untold tales. But does something that's out of sight truly vanish from our thoughts?</p>
+            </div>
+        </a>
+        <a href="https://www.ted.com/tedx/events/30912" class="event-card" data-year="2018" data-event="Please Turn Over" data-topic="Social Change">
+            <img src="images/event-image-2.jpg" alt="Event Image 2">
+            <div class="event-info">
+                <h3>Theme: Please Turn Over</h3>
+                <p>September 16, 2018</p>
+                <p>We need to only say “Please Turn Over” because India is in the midst of a global remaking.</p>
+            </div>
+        </a>
+        <a href="https://www.ted.com/tedx/events/53613" class="event-card" data-year="2023" data-event="Turning Vision Into Reality" data-topic="Climate Crisis">
+            <img src="images/event-image-3.jpg" alt="Event Image 3">
+            <div class="event-info">
+                <h3>Theme: Turning Vision Into Reality</h3>
+                <p>August 27, 2023</p>
+                <p>Countdown is a global initiative, powered by TED and Future Stewards, that aims to accelerate solutions to the climate crisis.</p>
+            </div>
+        </a>
+    </div>
+</div>
+</section>
+</main>
+<br><br><br><hr/>
+<div class="footer">
+    <div class="contact-container">
+        <a href="https://www.instagram.com/tedxnapierbridge/" target="_blank" class="contact-icon">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="mailto:team@tedxnapierbridge.com" class="contact-icon">
+            <i class="bi bi-envelope"></i>
+        </a>
+        <a href="https://www.facebook.com/TEDxNapierBridge/" target="_blank" class="contact-icon">
+            <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://twitter.com/tedxnapier" target="_blank" class="contact-icon">
+            <i class="bi bi-twitter"></i>
+        </a>
+    </div>
+    <br/>
+    <div><strong>This independently organized TEDx event is operated under license from <a href="http://ted.com/" target="_blank" style = "color: #E62B1E;font-weight: bold;">TED</a>.</strong></div>
+    <br/>
+</div>
+
+<script src="scripts.js"></script>
+
+<script>
+    function filterEvents() {
+	var year = document.getElementById('year-select').value;
+	var event = document.getElementById('event-select').value;
+	var topic = document.getElementById('topic-select').value;
+	var cards = document.getElementsByClassName('event-card');
+
+	for (var i = 0; i < cards.length; i++) {
+		var card = cards[i];
+		var cardYear = card.getAttribute('data-year');
+		var cardEvent = card.getAttribute('data-event');
+		var cardTopic = card.getAttribute('data-topic');
+
+		// Check if the card matches the selected filters
+		if ((year === 'all' || year === cardYear) &&
+			(event === 'all' || event === cardEvent) &&
+			(topic === 'all' || topic === cardTopic)) {
+			card.style.display = 'block';
+		} else {
+			card.style.display = 'none';
+		}
+	}
+}
+</script>
+<script>
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+</script>
+
+</body>
+</html>

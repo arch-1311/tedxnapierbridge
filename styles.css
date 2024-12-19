@@ -3,17 +3,19 @@
 * {box-sizing: border-box;}
 
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  /* min-height: 100vh; */
-  margin: 0;
-  transition: background 0.2s linear;
-}
+    font-family: Open Sans, 'Helvetica', 'Arial', sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 5rem auto 0;
+    
+    width: 100%; /* Make it responsive */
+    transition: background 0.2s linear;
+  }
+  
 
 hr {
     border: 0;
@@ -31,31 +33,291 @@ hr {
     background-color: #fff;
 } */
 
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    position: relative;
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.header-container {
+    max-width: 900px; /* Limit width to 900px */
+    margin: 0 auto; /* Center content horizontally */
+    width: 100%;
+}
+
+/* Top Row */
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: #f4f4f4;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+}
+.social-icons a {
+    color: #333;
+    margin-left: 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #E62B1E;
+}
+/* Logo */
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+/* Navigation Menu */
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+    cursor: pointer; /* Add pointer cursor for dropdown */
+}
+
+.menu a:hover {
+    color: #E62B1E;
+}
+
+/* Submenu - initially hidden */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    list-style: none;
+    z-index: 1000;
+}
+
+.submenu.show {
+    display: block; /* Show submenu when 'show' class is added */
+}
+
+.submenu li {
+    width: 150px;
+}
+
+.submenu a {
+    padding: 10px;
+    color: #333;
+    font-size: 0.9rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.submenu a:hover {
+    background: #f4f4f4;
+    color: #E62B1E;
+}
+
+/* Chevron Styling */
+.bi-chevron-down,
+.bi-chevron-up {
+    transition: transform 0.3s ease; /* Smooth chevron rotation */
+    margin-left: 5px;
+    font-size: 0.8rem; /* Smaller chevron */
+}
+
+.bi-chevron-up {
+    transform: rotate(180deg); /* Rotate chevron upwards */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    display: none; /* Hide by default for larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px auto;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 0;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu on smaller screens */
+    }
+}
+
+
+/* Donate Button */
+.donate-btn a {
+    background: #E62B1E;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.donate-btn a:hover {
+    background: #c7241b;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .menu li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .menu a {
+        padding: 10px 15px;
+        border-bottom: 1px solid #f4f4f4;
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+    }
+
+    .submenu a {
+        padding-left: 30px;
+    }
+
+    .donate-btn {
+        display: none; /* Hide Donate button */
+    }
+    .top-row {
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 0.5rem;
+    }
+    
+    .bottom-row {
+        flex-direction: row;
+        padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu icon */
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+}
+
+
 
 .logo {
     size : 10px;
 }
 
-main > section {
+/* main > section {
     display: none;
 }
 
 main > section.active {
     display: block;
+} */
+.no-link {
+    cursor: default;
+    pointer-events: none;
+    color: gray; /* Optional: make it visually distinct */
 }
 
+.no-link i {
+    pointer-events: auto; /* Keep dropdown icon clickable */
+}
+  
 .ted, .ted_span {
     /* font-size: 2rem; */
     color:#e70000;
@@ -1060,5 +1322,10 @@ footer {
     .filter-section select {
         width: 100%;
         max-width: 300px;
+    }
+
+    .about-section h2, .partner-section h2, .speaker-section h2, .exhibition-section .section-header h2 , .past-events-section h2, .contact-section h2 , .section-header h2 {
+        font-size: 1rem;
+        margin-bottom: 0;
     }
 }
