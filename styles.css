@@ -10,8 +10,7 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin: 5rem auto 0;
-    
+    margin: 5rem auto 0;    
     width: 100%; /* Make it responsive */
     transition: background 0.2s linear;
   }
@@ -61,7 +60,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 20px;
+    padding: 8px 90px;
     background-color: #f4f4f4;
     font-size: 0.9rem;
     color: #555;
@@ -72,7 +71,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 10px 90px;
 }
 .social-icons a {
     color: #333;
@@ -274,13 +273,14 @@ header {
         padding-left: 30px;
     }
 
-    .donate-btn {
+    .donate-btn , .social-icons{
         display: none; /* Hide Donate button */
     }
     .top-row {
         justify-content: center;
         flex-wrap: wrap;
         font-size: 0.5rem;
+        padding: 8px 20px;
     }
     
     .bottom-row {

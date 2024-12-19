@@ -14,80 +14,224 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <!-- <div class="bg-animation">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-        <div id="stars4"></div>
-    </div> -->
-    
-    <header>
-        <!-- Top Row with Vision and Social Media -->
-        <div class="top-row">
-            <div class="vision">
-                <span>Our vision is to be a catalyst for positive change, opening minds with inspiring ideas.</span>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/TEDxNapierBridge/"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/tedxnapierbridge/"><i class="bi bi-instagram"></i></a>
-                <a href="https://twitter.com/tedxnapier"><i class="bi bi-twitter"></i></a>
-                <a href="mailto:team@tedxnapierbridge.com"><i class="bi bi-envelope"></i></a>
-            </div>
-        </div>
+<style>
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+    }
+
+    .banner iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    .text-container {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      text-align: left;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .text-container h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .text-container .dynamic-text {
+        font-size: 3rem;
+        /* margin-top: 1rem; */
+        height: 3rem;
+        overflow: hidden;
+        position: relative;
+        color : red;
+    }
+
+    .text-container .dynamic-text span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        animation: slideText 16s infinite;
+    }
+    .text-container {
+        position: relative;
+        text-align: left;
+    }
+
+    .dynamic-text {
+        font-size: 2rem;
+        margin-top: 1rem;
+        height: 2.5rem;
+        overflow: hidden;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .typing {
+        border-right: 2px solid black; /* Typing cursor */
+        padding-right: 5px;
+        animation: typing 1.5s steps(30) 1, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75); 
+        z-index: 0; /* Ensure it appears on top of the iframe */
+    }
+/* 
+
+        @keyframes slideText {
+            0%, 20% { transform: translateY(0); opacity: 1; }
+            25%, 45% { transform: translateY(-100%); opacity: 1; }
+            50%, 70% { transform: translateY(-200%); opacity: 1; }
+            75%, 95% { transform: translateY(-300%); opacity: 1; }
+        }
+
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        } */
+        @media (max-width: 768px) {
+          .text-container h1 {
+            font-size: 2rem;
+          }
+
+          .text-container .dynamic-text {
+            font-size: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .text-container h1 {
+            font-size: 1.2rem;
+          }
+
+          .text-container .dynamic-text {
+            font-size: 1.2rem;
+            height: 1.2rem;
+          }
+        }
+    </style>
+    <body>
+        <!-- <div class="bg-animation">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div id="stars4"></div>
+        </div> -->
         
-        <!-- Bottom Row with Logo, Navigation, and Donate -->
-        <div class="bottom-row">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="#"><strong>TED</strong><span>xNapierBridge</span></a>
+        <header>
+            <!-- Top Row with Vision and Social Media -->
+            <div class="top-row">
+                <div class="vision">
+                    <span>Our vision is to be a catalyst for positive change, opening minds with inspiring ideas.</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/TEDxNapierBridge/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/tedxnapierbridge/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://twitter.com/tedxnapier"><i class="bi bi-twitter"></i></a>
+                    <a href="mailto:team@tedxnapierbridge.com"><i class="bi bi-envelope"></i></a>
+                </div>
             </div>
-    
-            <!-- Navigation -->
-            <nav>
-                <ul class="menu">
-                  <li><a href="home.html">Home</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
-                    <ul class="submenu">
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="team.html">Team</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="attend.html">Attend</a></li>
-                  <li><a href="speakers.html">Speakers</a></li>
-                  <li><a href="watch.html">Watch</a></li>
-                  <li><a href="past-events.html">Past Events</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="">Connect <i class="bi bi-chevron-down"></i></a>
-                    <ul class="submenu">
-                      <li><a href="donate.html">Donate</a></li>
-                      <li><a href="volunteer.html">Volunteer</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="">Partners <i class="bi bi-chevron-down"></i></a>
-                    <ul class="submenu">
-                      <li><a href="current-partners.html">Current Partners</a></li>
-                      <li><a href="become-partner.html">Become a Partner</a></li>
-                    </ul>
-                  </li>
-                </ul>
-            </nav>
-              
-            <div class="hamburger-menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <!-- Donate Button -->
-            <div class="donate-btn">
-                <a href="#">DONATE</a>
-            </div>
-        </div>
-    </header>
+            
+            <!-- Bottom Row with Logo, Navigation, and Donate -->
+            <div class="bottom-row">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#"><strong>TED</strong><span>xNapierBridge</span></a>
+                </div>
         
+                <!-- Navigation -->
+                <nav>
+                    <ul class="menu">
+                      <li><a href="home.html">Home</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                        <ul class="submenu">
+                          <li><a href="about.html">About Us</a></li>
+                          <li><a href="team.html">Team</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="attend.html">Attend</a></li>
+                      <li><a href="speakers.html">Speakers</a></li>
+                      <li><a href="watch.html">Watch</a></li>
+                      <li><a href="past-events.html">Past Events</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="">Connect <i class="bi bi-chevron-down"></i></a>
+                        <ul class="submenu">
+                          <li><a href="donate.html">Donate</a></li>
+                          <li><a href="volunteer.html">Volunteer</a></li>
+                          <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="">Partners <i class="bi bi-chevron-down"></i></a>
+                        <ul class="submenu">
+                          <li><a href="current-partners.html">Current Partners</a></li>
+                          <li><a href="become-partner.html">Become a Partner</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                </nav>
+                  
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <!-- Donate Button -->
+                <div class="donate-btn">
+                    <a href="#">DONATE</a>
+                </div>
+            </div>
+        </header>
+        <div class="banner">
+          <iframe 
+              src="https://www.youtube.com/embed/N-l1xtCMnpw?autoplay=1&mute=1&loop=1&playlist=N-l1xtCMnpw" 
+              frameborder="0" 
+              allow="autoplay; fullscreen"
+              style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 90vh; transform: translate(-50%, -50%); z-index: -1;">
+          </iframe>
+          <div class="overlay"></div>
+          <div class="text-container">
+              <h1>We&#39;re not just a city,</h1>
+              <h1>We&#39;re, <span class="dynamic-text" id="dynamic-text"></span></h1>
+              <br><h1>We&#39;re TEDxNapierBridge,</h1>
+              <h1>find yourself here.</h1>
+          </div>
+      </div>
+  
     <main style="max-width: 950px;">
     <!--dark and light theme icon -->
     <!-- <div>
@@ -171,25 +315,7 @@
     </section> -->
     
     
-    <!-- Contact -->
-    <!-- <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Feel free to reach out to us if you’d like to connect or become part of our team. At TEDxNapierBridge, we offer a dynamic community where curious thinkers, passionate advocates, and anyone seeking inspiration can find something special. Explore our past events, meet our incredible speakers, and stay tuned for upcoming talks that will challenge your thinking and broaden your horizons.</p>
-        <div class="contact-container">
-            <a href="https://www.instagram.com/tedxnapierbridge/" target="_blank" class="contact-icon">
-                <i class="bi bi-instagram"></i>
-            </a>
-            <a href="mailto:team@tedxnapierbridge.com" class="contact-icon">
-                <i class="bi bi-envelope"></i>
-            </a>
-            <a href="https://www.facebook.com/TEDxNapierBridge/" target="_blank" class="contact-icon">
-                <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://twitter.com/tedxnapier" target="_blank" class="contact-icon">
-                <i class="bi bi-twitter"></i>
-            </a>
-        </div>
-    </section> -->
+    
 </main>
     <br><br><br><hr/>
     <div class="footer">
@@ -215,11 +341,46 @@
    
     <script src="scripts.js"></script>
     <script>
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
-    </script>
+      const phrases = [
+        'world of inspiration...',
+        'community of survivors...',
+        'movement of ideas...',
+        'collection of cultures...',
+        'family of rebels...',
+        'symphony of change...',
+        'dream of future...'
+      ];
+
+      const dynamicText = document.getElementById('dynamic-text');
+
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      function type() {
+          if (deleting) {
+              if (charIndex > 0) {
+                  dynamicText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+                  charIndex--;
+                  setTimeout(type, 100); // Speed of deleting
+              } else {
+                  deleting = false;
+                  phraseIndex = (phraseIndex + 1) % phrases.length;
+                  setTimeout(type, 1000); // Pause before typing next phrase
+              }
+          } else {
+              if (charIndex < phrases[phraseIndex].length) {
+                  dynamicText.textContent = phrases[phraseIndex].substring(0, charIndex + 1);
+                  charIndex++;
+                  setTimeout(type, 150); // Speed of typing
+              } else {
+                  deleting = true;
+                  setTimeout(type, 1500); // Pause after typing the full phrase
+              }
+          }
+      }
+      type(); // Start the typing effect
+  </script>
     
 </body>
 </html>
