@@ -45,19 +45,8 @@
             margin: 0;
         }
 
-        .filters {
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .filters label {
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-
-        .filters select {
-            margin-bottom: 10px;
+        .filter-section select {
+            font-size: 14px;
         }
 
         
@@ -114,17 +103,18 @@
                  <ul class="menu">
                    <li><a href="home.html">Home</a></li>
                    <li class="dropdown">
-                     <a href="#" class="no-link">About <i class="bi bi-chevron-down"></i></a>
+                     <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
                      <ul class="submenu">
                        <li><a href="about.html">About Us</a></li>
                        <li><a href="team.html">Team</a></li>
                      </ul>
                    </li>
                    <li><a href="attend.html">Attend</a></li>
+                   <li><a href="speakers.html">Speakers</a></li>
                    <li><a href="watch.html">Watch</a></li>
                    <li><a href="past-events.html">Past Events</a></li>
                    <li class="dropdown">
-                     <a href="#" class="no-link">Connect <i class="bi bi-chevron-down"></i></a>
+                     <a href="#" class="">Connect <i class="bi bi-chevron-down"></i></a>
                      <ul class="submenu">
                        <li><a href="donate.html">Donate</a></li>
                        <li><a href="volunteer.html">Volunteer</a></li>
@@ -132,7 +122,7 @@
                      </ul>
                    </li>
                    <li class="dropdown">
-                     <a href="#" class="no-link">Partners <i class="bi bi-chevron-down"></i></a>
+                     <a href="#" class="">Partners <i class="bi bi-chevron-down"></i></a>
                      <ul class="submenu">
                        <li><a href="current-partners.html">Current Partners</a></li>
                        <li><a href="become-partner.html">Become a Partner</a></li>
@@ -163,7 +153,7 @@
         <div><span style="font-style: italic;color: red;">TEDxNapierBridge </span>has been dedicated to spreading innovative and thought-provoking ideas through short, powerful talks since its inception in 2015.TEDxNapierBridge talks have covered a wide range of topics, from technology and entrepreneurship to art and social impact. The event has featured a diverse range of speakers, including entrepreneurs, artists, activists, and thought leaders, who have shared their unique perspectives and experiences.<br/><br/>These talks have not only inspired thousands of people in Chennai but have also played a significant role in shaping local conversations and driving positive change in the community. Whether you're looking to explore new ideas, challenge your perspectives, or simply be inspired, TEDxNapierBridge talks have something to offer everyone.</div>
     </div>
 
-<div class="filters">
+<div class="filter-section">
     <label for="type">Type:</label>
     <select id="type" onchange="filterTalks()">
         <option value="">All</option>
@@ -181,11 +171,27 @@
         <option value="Environment">Environment</option>        
         <option value="Environment">Social</option>
     </select>
+
+    <label for="year-select">Year:</label> 
+    <select id="year-select" onchange="filterTalks()">
+        <option value="">All</option>
+        <option value="2023">2023</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+    </select>
+
+    <label for="event-select">Event:</label>
+    <select id="event-select" onchange="filterTalks()">
+        <option value="">All</option>
+        <option value="Think, become">Think, become</option>
+        <option value="Please Turn Over">Please Turn Over</option>
+        <option value="Turning Vision Into Reality">Turning Vision Into Reality</option>
+    </select>
 </div>
 
 <div id="talks" style="display: flex; flex-wrap: wrap; gap: 10px;">
     <!-- Talk 1 -->
-    <div class="talk-item" data-type="Talks" data-category="Art">
+    <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/H6WshAeXlNY/0.jpg" alt="Filmmaking will always remain a labor of love" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/H6WshAeXlNY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -198,7 +204,7 @@
     </div>
     
     <!-- Talk 2 -->
-    <div class="talk-item" data-type="Talks" data-category="Clock">
+    <div class="talk-item" data-type="Talks" data-category="Clock" data-year="2023" data-event="Think, become">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/845-o5iEilY/0.jpg" alt="Clocks are great storytellers if we simply listen" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/845-o5iEilY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -211,7 +217,7 @@
     </div>
 
     <!-- Talk 3 -->
-    <div class="talk-item" data-type="Talks" data-category="Art">
+    <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/XTXlYpwBQ8c/0.jpg" alt="Art is more than just a visual stimulant" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/XTXlYpwBQ8c?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -224,7 +230,7 @@
     </div>
 
     <!-- Talk 4 -->
-    <div class="talk-item" data-type="Performance" data-category="Music">
+    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/HzJU7UTCTgg/0.jpg" alt="Sounds of Parai" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/HzJU7UTCTgg?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -237,7 +243,7 @@
     </div>
     
     <!-- Talk 5 -->
-    <div class="talk-item" data-type="Performance" data-category="Music">
+    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/jwta_XqpCEQ/0.jpg" alt="Talk 5" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/jwta_XqpCEQ?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -250,7 +256,7 @@
     </div>
 
     <!-- Talk 6 -->
-    <div class="talk-item" data-type="Talks" data-category="Environment">
+    <div class="talk-item" data-type="Talks" data-category="Environment" data-year="2019" data-event="Please Turn Over">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/dyeuwu-G1T0/0.jpg" alt="Talk 6" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/dyeuwu-G1T0?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -263,7 +269,7 @@
     </div>
 
     <!-- Talk 7 -->
-    <div class="talk-item" data-type="Talks" data-category="Social">
+    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/ftT3tL-eLuw/0.jpg" alt="Talk 7" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/ftT3tL-eLuw?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -276,7 +282,7 @@
     </div>
 
     <!-- Talk 8 -->
-    <div class="talk-item" data-type="Talks" data-category="Social">
+    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/1U0fk2zlDxs/0.jpg" alt="Talk 8" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/1U0fk2zlDxs?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -345,14 +351,21 @@
         function filterTalks() {
             const typeFilter = document.getElementById('type').value;
             const categoryFilter = document.getElementById('category').value;
+            const yearFilter = document.getElementById('year-select').value;
+            const eventFilter = document.getElementById('event-select').value;
 
             const talks = document.querySelectorAll('.talk-item');
 
             talks.forEach(talk => {
                 const type = talk.getAttribute('data-type');
                 const category = talk.getAttribute('data-category');
+                const year = talk.getAttribute('data-year');
+                const event = talk.getAttribute('data-event');
 
-                if ((typeFilter === '' || type === typeFilter) && (categoryFilter === '' || category === categoryFilter)) {
+                if ((typeFilter === '' || type === typeFilter) &&
+                (categoryFilter === '' || category === categoryFilter) &&
+                (yearFilter === '' || year === yearFilter) &&
+                (eventFilter === '' || event === eventFilter)) {
                     talk.style.display = 'block';
                 } else {
                     talk.style.display = 'none';

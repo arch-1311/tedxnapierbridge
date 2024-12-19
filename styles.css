@@ -895,9 +895,10 @@ footer {
 
 .partner-grid {
     display: flex;
-    flex-wrap: nowrap;
-     animation: marquee 20s linear infinite; /* Adjust duration as needed */
+    flex-wrap: wrap;
+     /* animation: marquee 20s linear infinite; Adjust duration as needed */
     width: 100%;
+    justify-content: center;
 }
 
 .content_holder {
@@ -960,9 +961,9 @@ footer {
         height: 70px;
     }
 
-    .partner-grid {
-        animation: marquee 30s linear infinite; /* Adjust speed for smaller screens */
-    }
+    /* .partner-grid {
+        animation: marquee 30s linear infinite; /* Adjust speed for smaller screens 
+    } */
 }
 
 
@@ -1327,5 +1328,6 @@ footer {
     .about-section h2, .partner-section h2, .speaker-section h2, .exhibition-section .section-header h2 , .past-events-section h2, .contact-section h2 , .section-header h2 {
         font-size: 1rem;
         margin-bottom: 0;
+        animation: fadeIn 1.5s ease-out;
     }
 }
