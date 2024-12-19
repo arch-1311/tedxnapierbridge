@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 * {box-sizing: border-box;}
 
 body {
-    font-family: Open Sans, 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -37,7 +38,7 @@ hr {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 }
 
 header {
@@ -106,7 +107,7 @@ header {
 
 .menu li {
     position: relative;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .menu a {
