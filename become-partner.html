@@ -14,6 +14,174 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+    body > main{
+        background-color: black;
+    }
+    .banner {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .banner .background-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner .background-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .banner h1 {
+        font-size: 4.5em;
+        font-weight: bold;
+        color: white;
+        display: inline-block;
+        position: relative;
+        z-index: 1; /* Text appears above overlay */
+    }
+
+    .banner h1 span {
+        display: inline-block;
+    }
+
+    .banner h1 .sub-text {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(100%);
+        animation: easeInOutFromBottom 5s ease-in-out infinite; /* Infinite loop */
+    }
+
+    /* Add delay to each word */
+    .banner h1 .sub-text:nth-child(1) {
+        animation-delay: 0.25s;
+    }
+    .banner h1 .sub-text:nth-child(2) {
+        animation-delay: 0.75s;
+    }
+    .banner h1 .sub-text:nth-child(3) {
+        animation-delay: 1.5s;
+    }
+    .banner h1 .sub-text:nth-child(4) {
+        animation-delay: 2.25s;
+    }
+
+    /* Define the animation */
+    @keyframes easeInOutFromBottom {
+        /* Stage 1: Ease-in */
+        0% {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        30% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        50% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stage 2: Ease-out (whole sentence) */
+        80% {
+            opacity: 0;
+            transform: translateY(100%); /* Move whole sentence out of view */
+        }
+
+        /* Ensure sentence is fully hidden at the end */
+        100% {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+    }
+    /* Lines and text block */
+    .collaboration-text {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 2px solid #e62b1e;
+      border-bottom: 2px solid #e62b1e;
+      margin: 20px 0;
+      line-height: 1.5;
+      font-size: 1.2em;
+    }
+    .collaboration-text h2 {
+        font-size: 3rem; 
+        color:white
+    }
+
+    /* Three-column section */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 20px 10px;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1 1 calc(33.33% - 20px);
+      max-width: calc(33.33% - 20px);
+      /* background-color: #111; */
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .column h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .column .highlight {
+      font-size: 2.5em;
+      color: red;
+    }
+
+    .column p {
+      margin: 10px 0;
+      font-size: 1em;
+    }
+
+    .core-value {
+        font-size: 3rem;
+    }
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+        align-items: center;
+      }
+      .column {
+        max-width: 100%;
+      }
+      .banner .background-inner img {
+        object-fit: cover; /* Keeps the image covering the area without distortion */
+      }
+    }
+    @media (max-width: 480px) {
+        .banner {
+            height: 50vh;
+        }
+        .banner .background-inner img {
+           object-position: center; /* Ensures the image is centered on smaller screens */
+        }
+        .collaboration-text h2{
+            font-size: 2rem; 
+        }
+    }
+</style>
 <body>
     <!-- <div class="bg-animation">
         <div id="stars"></div>
@@ -48,13 +216,13 @@
                 <ul class="menu">
                   <li><a href="home.html">Home</a></li>
                   <li class="dropdown">
-                    <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                    <a href="#" class="">Attend <i class="bi bi-chevron-down"></i></a>
                     <ul class="submenu">
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="team.html">Team</a></li>
+                      <li><a href="conference.html">Conference</a></li>
+                      <li><a href="salon.html">Salon</a></li>
+                      <li><a href="adventure.html">Adventure X</a></li>
                     </ul>
                   </li>
-                  <li><a href="attend.html">Attend</a></li>
                   <li><a href="watch.html">Watch</a></li>
                   <li><a href="past-events.html">Past Events</a></li>
                   <li class="dropdown">
@@ -72,6 +240,15 @@
                       <li><a href="become-partner.html">Become a Partner</a></li>
                     </ul>
                   </li>
+                  <li class="dropdown">
+                    <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="team.html">Team</a></li>
+                    </ul>
+                  </li>
+                  
+                  <!-- <li><a href="speakers.html">Speakers</a></li> -->
                 </ul>
             </nav>
               
@@ -87,10 +264,52 @@
         </div>
     </header>
         
-    <main style="max-width: 950px;">
+    <main>
         <section id="donate" class="speaker-section">
             <div class="section-header">
-                <h2>BECOME A PARTNER...</h2>
+                <!-- <h2>BECOME A PARTNER...</h2> -->
+                <!-- Banner Section -->
+                <div class="banner">
+                    <div class="background-inner">
+                      <img src="https://cdn.prod.website-files.com/62c883cadf99d5331ab0dfe2/62c883cadf99d54767b0e06a_partner__cta-bg-p-2000.webp">
+                    </div>
+                    <div class="overlay"></div>
+                    <h1>
+                      <span style="background-color: #e62b1e; color: white; padding: 10px">Become</span>
+                      <span class="sub-text">a</span>
+                      <span class="sub-text">TED</span>
+                      <span class="sub-text">Partner</span>
+                    </h1>
+                  </div>
+                  
+                <br>
+                <!-- Collaboration Section -->
+                <div class="collaboration-text" style="max-width: 950px; text-align: center; margin: auto; display: flex; justify-content: center; align-items: center; height: 50vh;">
+                    <h2>Collaborating with industry-leading brands to craft <br>
+                    compelling and influential thought leadership advertising campaigns.</h2>
+                </div>
+                
+                <!-- Three-Column Layout -->
+                <div class="columns" >
+                    <div class="column">
+                    <h1 class="core-value">IMPACT.</h1>
+                    <div class="highlight">75%</div>
+                    <p>say TED has impacted their lives.</p>
+                    <p>We’re many things to many people: globally recognized storyteller, landmark events and conferences hub, and media powerhouse.</p>
+                    </div>
+                    <div class="column">
+                    <h1 class="core-value">TRUST.</h1>
+                    <div class="highlight">9/10</div>
+                    <p>view TED as a trusted brand.</p>
+                    <p>We uphold the highest editorial standards to continually earn our audience's trust and respect.</p>
+                    </div>
+                    <div class="column">
+                    <h1 class="core-value">VALUE.</h1>
+                    <div class="highlight">2/3</div>
+                    <p>feel our partners share our values.</p>
+                    <p>Our value comes from a mission to share the best ideas from around the world.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

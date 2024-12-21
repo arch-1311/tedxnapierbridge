@@ -16,58 +16,56 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  </head>
  <style>
-    
+    .talk-item {
+        margin-bottom: 20px;
+        flex: 1 1 calc(25% - 10px); /* Each item takes 25% of the width with a small gap */
+        box-sizing: border-box;
+    }
+
+    .thumbnail {
+        width: 100%;            
+        height: auto;          
+        object-fit: cover;
+        display: block;   
+        margin: 0;        
+        padding: 0; 
+    }
+
+
+    .talk-info {
+        text-align: left;
+    }
+
+    .talk-info h3 {
+        margin: 10px 0 5px;
+    }
+
+    .talk-info p {
+        margin: 0;
+    }
+
+    .filter-section select {
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) { /* For tablets and below */
         .talk-item {
-            margin-bottom: 20px;
-            flex: 1 1 calc(25% - 10px); /* Each item takes 25% of the width with a small gap */
-            box-sizing: border-box;
+            flex: 1 1 calc(50% - 10px); /* Each item takes 50% of the width */
+        }
+    }
+
+    @media (max-width: 576px) { /* For mobile devices */
+        .talk-item {
+            flex: 1 1 100%; /* Each item takes the full width */
+        }
+        .filters {
+            flex-direction: column;
         }
 
-        .thumbnail {
-            width: 100%;
-            cursor: pointer;
+        .filters label {
+            margin-right: 0;
         }
-
-        .video-wrapper iframe {
-            width: 100%;
-            height: 115px;
-            display: none;
-        }
-
-        .talk-info {
-            text-align: left;
-        }
-        .talk-info h3 {
-            margin: 10px 0 5px;
-        }
-
-        .talk-info p {
-            margin: 0;
-        }
-
-        .filter-section select {
-            font-size: 14px;
-        }
-
-        
-        @media (max-width: 768px) { /* For tablets and below */
-            .talk-item {
-                flex: 1 1 calc(50% - 10px); /* Each item takes 50% of the width */
-            }
-        }
-
-        @media (max-width: 576px) { /* For mobile devices */
-            .talk-item {
-                flex: 1 1 100%; /* Each item takes the full width */
-            }
-            .filters {
-                flex-direction: column;
-            }
-
-            .filters label {
-                margin-right: 0;
-            }
-        }
+    }
  </style>
  <body>
      <!-- <div class="bg-animation">
@@ -100,36 +98,44 @@
      
              <!-- Navigation -->
              <nav>
-                 <ul class="menu">
-                   <li><a href="home.html">Home</a></li>
-                   <li class="dropdown">
-                     <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
-                     <ul class="submenu">
-                       <li><a href="about.html">About Us</a></li>
-                       <li><a href="team.html">Team</a></li>
-                     </ul>
-                   </li>
-                   <li><a href="attend.html">Attend</a></li>
-                   <li><a href="speakers.html">Speakers</a></li>
-                   <li><a href="watch.html">Watch</a></li>
-                   <li><a href="past-events.html">Past Events</a></li>
-                   <li class="dropdown">
-                     <a href="#" class="">Connect <i class="bi bi-chevron-down"></i></a>
-                     <ul class="submenu">
-                       <li><a href="donate.html">Donate</a></li>
-                       <li><a href="volunteer.html">Volunteer</a></li>
-                       <li><a href="contact.html">Contact Us</a></li>
-                     </ul>
-                   </li>
-                   <li class="dropdown">
-                     <a href="#" class="">Partners <i class="bi bi-chevron-down"></i></a>
-                     <ul class="submenu">
-                       <li><a href="current-partners.html">Current Partners</a></li>
-                       <li><a href="become-partner.html">Become a Partner</a></li>
-                     </ul>
-                   </li>
-                 </ul>
-             </nav>
+                <ul class="menu">
+                  <li><a href="home.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="">Attend <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="conference.html">Conference</a></li>
+                      <li><a href="salon.html">Salon</a></li>
+                      <li><a href="adventure.html">Adventure X</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="watch.html">Watch</a></li>
+                  <li><a href="past-events.html">Past Events</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="">Connect <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="donate.html">Donate</a></li>
+                      <li><a href="volunteer.html">Volunteer</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="">Partners <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="current-partners.html">Current Partners</a></li>
+                      <li><a href="become-partner.html">Become a Partner</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="team.html">Team</a></li>
+                    </ul>
+                  </li>
+                  
+                  <!-- <li><a href="speakers.html">Speakers</a></li> -->
+                </ul>
+            </nav>
                
              <div class="hamburger-menu">
                  <div class="bar"></div>
@@ -192,21 +198,20 @@
 <div id="talks" style="display: flex; flex-wrap: wrap; gap: 10px;">
     <!-- Talk 1 -->
     <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/H6WshAeXlNY/0.jpg" alt="Filmmaking will always remain a labor of love" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/H6WshAeXlNY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>        
-        <div class="talk-info">
-            <a href="talks/filmmaking.html" class="talk-info" style="text-decoration: none; color:inherit">
+        <a href="talks/filmmaking.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/H6WshAeXlNY/0.jpg" alt="Filmmaking will always remain a labor of love" class="thumbnail">
+            </div>
+            <div class="talk-info">
                 <h6><em>Talks</em></h6>
                 <h3>Filmmaking will always remain a labor of love</h3>
                 <p>Gautham Vasudev Menon</p>
-            </a>
-        </div> 
-    </div>
+            </div>
+        </a>
+    </div>    
     
     <!-- Talk 2 -->
-    <div class="talk-item" data-type="Talks" data-category="Clock" data-year="2023" data-event="Think, become">
+    <!-- <div class="talk-item" data-type="Talks" data-category="Clock" data-year="2023" data-event="Think, become">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/845-o5iEilY/0.jpg" alt="Clocks are great storytellers if we simply listen" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/845-o5iEilY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -216,10 +221,22 @@
             <h3>Clocks are great storytellers if we simply listen</h3>
             <p>Robert Kennedy</p>
         </div>
+    </div> -->
+    <div class="talk-item" data-type="Talks" data-category="Technology" data-year="2023" data-event="Think, become">
+        <a href="talks/filmmaking.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/845-o5iEilY/0.jpg" alt="Clocks are great storytellers if we simply listen" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talks</em></h6>
+                <h3>Clocks are great storytellers if we simply listen</h3>
+                <p>Robert Kennedy</p>
+            </div>
+        </a>
     </div>
-
+    
     <!-- Talk 3 -->
-    <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
+    <!-- <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/XTXlYpwBQ8c/0.jpg" alt="Art is more than just a visual stimulant" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/XTXlYpwBQ8c?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -229,10 +246,22 @@
             <h3>Art is more than just a visual stimulant</h3>
             <p>Krishnapriya CP</p>
         </div>
+    </div> -->
+    <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
+        <a href="talks/art-is-more-than-just-a-visual-stimulant.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/XTXlYpwBQ8c/0.jpg" alt="Art is more than just a visual stimulant" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talks</em></h6>
+                <h3>Art is more than just a visual stimulant</h3>
+                <p>Krishnapriya CP</p>
+            </div>
+        </a>
     </div>
-
+    
     <!-- Talk 4 -->
-    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
+    <!-- <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/HzJU7UTCTgg/0.jpg" alt="Sounds of Parai" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/HzJU7UTCTgg?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -242,10 +271,22 @@
             <h3>Sounds of Parai</h3>
             <p>Aazhi Kalaikuviyam</p>
         </div>
+    </div> -->
+    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
+        <a href="talks/sounds-of-parai.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/HzJU7UTCTgg/0.jpg" alt="Sounds of Parai" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Performance</em></h6>
+                <h3>Sounds of Parai</h3>
+                <p>Aazhi Kalaikuviyam</p>
+            </div>
+        </a>
     </div>
     
     <!-- Talk 5 -->
-    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
+    <!-- <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/jwta_XqpCEQ/0.jpg" alt="Talk 5" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/jwta_XqpCEQ?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -255,10 +296,22 @@
             <h3>Shifting the note : a Veena performance</h3>
             <p>Madhu Ramakrishnan</p>
         </div>
+    </div> -->
+    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
+        <a href="talks/shifting-the-note-a-veena-performance.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/jwta_XqpCEQ/0.jpg" alt="Talk 5" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Performance</em></h6>
+                <h3>Shifting the note : a Veena performance</h3>
+                <p>Madhu Ramakrishnan</p>
+            </div>
+        </a>
     </div>
-
+    
     <!-- Talk 6 -->
-    <div class="talk-item" data-type="Talks" data-category="Environment" data-year="2019" data-event="Please Turn Over">
+    <!-- <div class="talk-item" data-type="Talks" data-category="Environment" data-year="2019" data-event="Please Turn Over">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/dyeuwu-G1T0/0.jpg" alt="Talk 6" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/dyeuwu-G1T0?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -268,10 +321,22 @@
             <h3>How false solutions are a detriment to the environment</h3>
             <p>Nityanand Jayaraman</p>
         </div>
+    </div> -->
+    <div class="talk-item" data-type="Talks" data-category="Environment" data-year="2019" data-event="Please Turn Over">
+        <a href="talks/how-false-solutions-are-a-detriment-to-the-environment.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/dyeuwu-G1T0/0.jpg" alt="Talk 6" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talks</em></h6>
+                <h3>How false solutions are a detriment to the environment</h3>
+                <p>Nityanand Jayaraman</p>
+            </div>
+        </a>
     </div>
-
+    
     <!-- Talk 7 -->
-    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
+    <!-- <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/ftT3tL-eLuw/0.jpg" alt="Talk 7" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/ftT3tL-eLuw?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -281,10 +346,23 @@
             <h3>The questions that we ought to ask </h3>
             <p> Dr. Shalini N & Shyam Sundar </p>
         </div>
+    </div> -->
+    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
+        <a href="talks/the-questions-that-we-ought-to-ask.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/ftT3tL-eLuw/0.jpg" alt="Talk 7" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talks</em></h6>
+                <h3>The questions that we ought to ask</h3>
+                <p>Dr. Shalini N & Shyam Sundar</p>
+            </div>
+        </a>
     </div>
+    
 
     <!-- Talk 8 -->
-    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
+    <!-- <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
         <div class="video-wrapper">
             <img src="https://img.youtube.com/vi/1U0fk2zlDxs/0.jpg" alt="Talk 8" class="thumbnail" onclick="playVideo(this)">
             <iframe src="https://www.youtube.com/embed/1U0fk2zlDxs?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -294,7 +372,20 @@
             <h3>The irony of caste in the face of death</h3>
             <p>Arun Vijai Mathavan</p>
         </div>
-    </div>    
+    </div>     -->
+    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
+        <a href="talks/the-irony-of-caste-in-the-face-of-death.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/1U0fk2zlDxs/0.jpg" alt="Talk 8" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talks</em></h6>
+                <h3>The irony of caste in the face of death</h3>
+                <p>Arun Vijai Mathavan</p>
+            </div>
+        </a>
+    </div>
+    
 </div>
 </section>
 

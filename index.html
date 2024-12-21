@@ -18,7 +18,7 @@
     .banner {
       position: relative;
       width: 100%;
-      height: 50vh;
+      height: 80vh;
       overflow: hidden;
     }
 
@@ -141,6 +141,9 @@
             font-size: 1.2rem;
             height: 1.4rem;
           }
+          .banner {
+            height: 30vh;
+          }
         }
     </style>
     <body>
@@ -177,14 +180,13 @@
                     <ul class="menu">
                       <li><a href="home.html">Home</a></li>
                       <li class="dropdown">
-                        <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                        <a href="#" class="">Attend <i class="bi bi-chevron-down"></i></a>
                         <ul class="submenu">
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="team.html">Team</a></li>
+                          <li><a href="conference.html">Conference</a></li>
+                          <li><a href="salon.html">Salon</a></li>
+                          <li><a href="adventure.html">Adventure X</a></li>
                         </ul>
                       </li>
-                      <li><a href="attend.html">Attend</a></li>
-                      <li><a href="speakers.html">Speakers</a></li>
                       <li><a href="watch.html">Watch</a></li>
                       <li><a href="past-events.html">Past Events</a></li>
                       <li class="dropdown">
@@ -202,6 +204,15 @@
                           <li><a href="become-partner.html">Become a Partner</a></li>
                         </ul>
                       </li>
+                      <li class="dropdown">
+                        <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                        <ul class="submenu">
+                          <li><a href="about.html">About Us</a></li>
+                          <li><a href="team.html">Team</a></li>
+                        </ul>
+                      </li>
+                      
+                      <!-- <li><a href="speakers.html">Speakers</a></li> -->
                     </ul>
                 </nav>
                   
@@ -225,10 +236,9 @@
           </iframe>
           <div class="overlay"></div>
           <div class="text-container">
-              <h1>We&#39;re not just a city,</h1>
+              <h1>For the curious</h1>
               <h1>We&#39;re, <span class="dynamic-text" id="dynamic-text"></span></h1>
-              <br><h1>We&#39;re TEDxNapierBridge,</h1>
-              <h1>find yourself here.</h1>
+              <br><h1>We&#39;re TEDxNapier Bridge <br> where ideas and curious meet </h1>
           </div>
       </div>
   
@@ -342,13 +352,11 @@
     <script src="scripts.js"></script>
     <script>
       const phrases = [
-        'world of inspiration...',
-        'community of survivors...',
-        'movement of ideas...',
-        'collection of cultures...',
-        'family of rebels...',
-        'symphony of change...',
-        'dream of future...'
+        'who ask why...',
+        'who are rooted in wonder...',
+        'who seek knowledge...',
+        'who stay grounded...',
+        'who ask why not...'
       ];
 
       const dynamicText = document.getElementById('dynamic-text');
@@ -366,16 +374,16 @@
               } else {
                   deleting = false;
                   phraseIndex = (phraseIndex + 1) % phrases.length;
-                  setTimeout(type, 1000); // Pause before typing next phrase
+                  setTimeout(type, 500); // Pause before typing next phrase
               }
           } else {
               if (charIndex < phrases[phraseIndex].length) {
                   dynamicText.textContent = phrases[phraseIndex].substring(0, charIndex + 1);
                   charIndex++;
-                  setTimeout(type, 150); // Speed of typing
+                  setTimeout(type, 50); // Speed of typing
               } else {
                   deleting = true;
-                  setTimeout(type, 1500); // Pause after typing the full phrase
+                  setTimeout(type, 500); // Pause after typing the full phrase
               }
           }
       }
