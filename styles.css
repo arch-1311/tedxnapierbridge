@@ -335,7 +335,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 ; /* was --0 15px;*/
 }
 
 nav ul li a {
