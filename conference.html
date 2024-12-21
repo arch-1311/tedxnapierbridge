@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <title>TEDxNapierBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    body > main {
+        background-color: white;
+    }
+    .sub-h1 {
+        font-size: 46px;
+    }
+    .sub-p {
+        font-size: 26px;
+    }
+    /* Speakers Section */
+    #speakers {
+        position: relative; /* Make sure the section is the relative container for the arrows */
+        overflow: hidden; /* Hide overflow to prevent unwanted scrollbars */
+    }
+
+    /* Arrows for navigation */
+    .arrow-left, .arrow-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 24px; /* Increase arrow size */
+        z-index: 10;
+    }
+
+    .arrow-left {
+        left: 10px; /* Position the left arrow */
+    }
+
+    .arrow-right {
+        right: 10px; /* Position the right arrow */
+    }
+
+    /* Speakers Container */
+    .speakers-container {
+        display: flex;
+        flex-wrap: nowrap;  /* Fixed typo from no-wrap to nowrap */
+        justify-content: center;
+        gap: 30px;
+        width: 100%;  /* Full page width */
+        transition: transform 0.5s ease;  /* Smooth transition for sliding effect */
+        padding: 20px 0;
+    }
+
+    /* Speaker Card Styles */
+    .speaker-card {
+        background: none;
+        width: 300px;
+        height: 400px;
+        perspective: 1000px; /* 3D Perspective */
+        flex-shrink: 0;  /* Prevent shrinking */
+    }
+
+    /* Card Front and Back */
+    .card-front,
+    .card-back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        transition: transform 0.6s;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .card-front {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .card-front img {
+        width: 80%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .card-front h2 {
+        font-size: 1.5em;
+    }
+
+    .card-back {
+        background-color: #E62B1E; /* Red back for contrast */
+        color: #fff;
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: left;
+        font-size: 0.9em;
+    }
+
+    .speaker-card:hover .card-front {
+        transform: rotateY(180deg);
+    }
+
+    .speaker-card:hover .card-back {
+        transform: rotateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .speakers-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .speaker-card {
+            width: 80%;
+            margin-bottom: 30px;
+        }
+    }
+
+</style>
+<body>
+    <!-- <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div> -->
+    
+    <header>
+        <!-- Top Row with Vision and Social Media -->
+        <div class="top-row">
+            <div class="vision">
+                <span>Our vision is to be a catalyst for positive change, opening minds with inspiring ideas.</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/TEDxNapierBridge/"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/tedxnapierbridge/"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/tedxnapier"><i class="bi bi-twitter"></i></a>
+                <a href="mailto:team@tedxnapierbridge.com"><i class="bi bi-envelope"></i></a>
+            </div>
+        </div>
+        
+        <!-- Bottom Row with Logo, Navigation, and Donate -->
+        <div class="bottom-row">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#"><strong>TED</strong><span>xNapierBridge</span></a>
+            </div>
+    
+            <!-- Navigation -->
+            <nav>
+                <ul class="menu">
+                  <li><a href="home.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="">Attend <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="conference.html">Conference</a></li>
+                      <li><a href="salon.html">Salon</a></li>
+                      <li><a href="adventure.html">Adventure X</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="watch.html">Watch</a></li>
+                  <li><a href="past-events.html">Past Events</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="">Connect <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="donate.html">Donate</a></li>
+                      <li><a href="volunteer.html">Volunteer</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="">Partners <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="current-partners.html">Current Partners</a></li>
+                      <li><a href="become-partner.html">Become a Partner</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="team.html">Team</a></li>
+                    </ul>
+                  </li>
+                  
+                  <!-- <li><a href="speakers.html">Speakers</a></li> -->
+                </ul>
+            </nav>
+              
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <!-- Donate Button -->
+            <div class="donate-btn">
+                <a href="#">DONATE</a>
+            </div>
+        </div>
+    </header>
+        
+    <main>
+
+        <!-- Conference Banner -->
+        <section>
+            <a href="https://www.townscript.com/in/chennai">
+                <img src="images/conference-banner.png" alt="Conference Banner" style="width: 100%;">
+            </a>
+        </section>
+    
+        <!-- Three Column Layout -->
+        <section style="display: flex; justify-content: space-between; margin: 20px 0;padding: 20px;">
+            <div style="flex: 1; padding: 20px;">
+                <h1 class="sub-h1">01</h1>
+                <p class="sub-p">One day celebrating ideas that spark conversation and drive meaningful change.</p>
+            </div>
+            <div style="flex: 1; padding: 20px;">
+                <h1 class="sub-h1">02</h1>
+                <p class="sub-p">Hear from 10 speakers embodying the mission of TED of ideas worth spreading.</p>
+            </div>
+            <div style="flex: 1; padding: 20px;">
+                <h1 class="sub-h1">03</h1>
+                <p class="sub-p">Meet a community of people building a joyful, just, and sustainable future – for all.</p>
+            </div>
+        </section>
+        
+    
+        <!-- Secondary Banner -->
+        <section style="position: relative; margin: 20px 0;">
+            <img src="images/conference-banner-4.png" alt="Conference Secondary Banner" style="width: 100%;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: left; color: white;">
+                <h2 style="font-size: 32px; font-weight: bold;">IDEAS SHAPING TOMORROW</h2>
+                <p style="font-size: 16px; margin: 20px 0;">This January TEDxNapierBridge is back. You can expect the same great TEDx talks from the world’s most inspiring and innovative speakers – plus the opportunity to meet a community of people who believe in the transformative power of storytelling and ideas.</p>
+                <p style="font-size: 16px;">Drawing on the themes from past events, TEDxNapierBridge’s Festival of Ideas will connect the dots across different movements and ask how do we solve these complex issues, together? The day will be a true festival, bringing together talks, workshops, and networking events.</p><br><br>
+                <a href="https://www.townscript.com/in/chennai" style="background-color: red; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold;">TICKETS</a>
+            </div>
+        </section>
+    
+        <!-- Speakers Section -->
+        <section id="speakers" class="speaker-section">
+            <div class="section-header">
+                <h2>Speakers and Performers of TruthCon 2024</h2>
+            </div>
+            <!-- <h2></h2> -->
+            <!-- <div style="max-width: 800px;"> -->
+            <!-- <button class="arrow-left">&#10094;</button> -->
+
+            <div class="speakers-container">
+                <div class="speaker-card">
+                    <div class="card-front">
+                        <img src="images/karen-rebelo.jpg" alt="Karen Rebelo">
+                        <h2>Karen Rebelo</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>Karen Rebelo is a Deputy Editor at BOOM Live, an independent digital journalism platform with a mission to fight misinformation. Her expertise lies in discovering misinformation and deception that spreads online in India. A handful of her pupils - of various age groups - have gone on to launch their own fact-checking newsrooms in regional Indian languages. Karen’s latest article is on the misuse of Generative AI to disseminate false information and inflict other harm.</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="card-front">
+                        <img src="images/muralitharan.jpg" alt="Muralitharan">
+                        <h2>Muralitharan</h2>
+                    </div>
+                    <div class="card-back">
+                        <p style="font-size: 12px;">Muralitharan is a distinguished journalist at The Collective Newsroom (BBC). With over two decades of experience, covering Tamil Nadu's politics, history, society, and cinema for media outlets like BBC Tamil, India Today - Tamil, NDTV - Hindu, and Puthiya Thalaimurai, his insightful reporting extends to Sri Lankan affairs, including pivotal events like the United Nations Human Rights Commission sessions in Geneva. He extends his expertise to the literary circle, with his notable translations including "A Sudra's Story" and "Scoop," alongside co-authoring the book "Katchatheevu”.</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="card-front">
+                        <img src="images/sindhuja-sankaran.jpg" alt="Dr. Sindhuja Sankaran">
+                        <h2>Dr. Sindhuja Sankaran</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>Dr. Sindhuja Sankaran is a social psychologist who graduated from Cardiff University, UK and has previously worked with Jagiellonian University and the University of Warsaw in Poland. She is a founding member of the psychology department at Sai University. She is an expert in the field of social cognition, specifically on cognitive and motivational processes predicting individual and group behavior. Dr. Sindhuja founded her NGO ‘Rethinking Refugees’ in 2018.</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="card-front">
+                        <img src="images/nilesh-christopher.jpg" alt="Nilesh Christopher">
+                        <h2>Nilesh Christopher</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>Nilesh Christopher is a freelance journalist whose work focuses on the human impact of technology adoption. His investigative journalism on the implications of AI on politics in India and other South-East Asian countries has been ground-breaking, winning him, among other accolades, the South Asia Journalism Association Award in 2023. His work has been featured in renowned publications such as WIRED, BBC, Al Jazeera, and Rest of World.</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="card-front">
+                        <img src="images/uru-paanar.jpg" alt="Uru Paanar">
+                        <h2>Uru Paanar</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>Uru Paanar is a Chennai based musical collective that creates uniquely refreshing musical works by playing contemporary rhythms with traditional instruments. Their custom-made instruments initiative draws inspiration from Sangam Literature like Tholkaappiyam. It aims to revive ancient Tamil Panns to create a captivating soundscape that pays homage to the rich cultural heritage of Tamil Nadu.</p>
+                    </div>
+                </div>
+            <!-- </div>
+            <button class="arrow-right">&#10095;</button> -->
+        </div>
+
+        </section>
+        <!-- Closing Section -->
+        <section style="position: relative; margin: 20px 0;">
+            <img src="images/conference-banner-4.png" alt="Conference Secondary Banner" style="width: 100%; height: auto;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: left; color: white; max-width: 800px;">
+                <h2 style="font-size: 32px; font-weight: bold;">HERE’S HOW WE DESIGN A BETTER FUTURE</h2>
+                <p style="font-size: 16px; margin: 20px 0;">
+                    Our events are so much more than sitting in a theatre hearing talks – it’s the first step in taking action.
+                </p>
+                <div style="margin-top: 20px;">
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="font-size: 24px; margin: 0;">01</h3>
+                        <p style="font-size: 16px; margin: 0;">
+                            We bring people together to unleash the transformational power of ideas and stories. We know stories can change the world because others’ stories have changed us.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="font-size: 24px; margin: 0;">02</h3>
+                        <p style="font-size: 16px; margin: 0;">
+                            We bring new friends, allies, and speakers together to create vibrant communities that are building a movement made up of sharing powerful ideas and stories.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="font-size: 24px; margin: 0;">03</h3>
+                        <p style="font-size: 16px; margin: 0;">
+                            We bring curiosity, joy, and hope to all of our work – helping you feel empowered to take action on the most pressing issues of our time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p>
+               <h2> What is TEDx? </h2><br> <br>
+
+                In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.  Our event is called TEDxLondon, where x = independently organized TED event. At our TEDxLondon event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group.  The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
+            </p>
+        </section>
+    </main>
+    
+    <br><br><br><hr/>
+    <div class="footer">
+        <div class="contact-container">
+            <a href="https://www.instagram.com/tedxnapierbridge/" target="_blank" class="contact-icon">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="mailto:team@tedxnapierbridge.com" class="contact-icon">
+                <i class="bi bi-envelope"></i>
+            </a>
+            <a href="https://www.facebook.com/TEDxNapierBridge/" target="_blank" class="contact-icon">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://twitter.com/tedxnapier" target="_blank" class="contact-icon">
+                <i class="bi bi-twitter"></i>
+            </a>
+        </div>
+        <br/>
+        <div><strong>This independently organized TEDx event is operated under license from <a href="http://ted.com/" target="_blank" style = "color: #E62B1E;font-weight: bold;">TED</a>.</strong></div>
+        <br/>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+        
+
+    </script>
+</body>
+</html>
