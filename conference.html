@@ -24,12 +24,12 @@
     .sub-p {
         font-size: 26px;
     }
-    /* Speakers Section */
-    #speakers {
-        position: relative; /* Make sure the section is the relative container for the arrows */
-        overflow: hidden; /* Hide overflow to prevent unwanted scrollbars */
+    .closing-h3 {
+        font-size: 24px; margin: 0;
     }
-
+    .closing-p {
+        font-size: 16px; margin: 0;
+    }
     /* Arrows for navigation */
     .arrow-left, .arrow-right {
         position: absolute;
@@ -52,88 +52,25 @@
         right: 10px; /* Position the right arrow */
     }
 
-    /* Speakers Container */
-    .speakers-container {
-        display: flex;
-        flex-wrap: nowrap;  /* Fixed typo from no-wrap to nowrap */
-        justify-content: center;
-        gap: 30px;
-        width: 100%;  /* Full page width */
-        transition: transform 0.5s ease;  /* Smooth transition for sliding effect */
-        padding: 20px 0;
+    #banner {
+        height: auto;
     }
-
-    /* Speaker Card Styles */
-    .speaker-card {
-        background: none;
-        width: 300px;
-        height: 400px;
-        perspective: 1000px; /* 3D Perspective */
-        flex-shrink: 0;  /* Prevent shrinking */
-    }
-
-    /* Card Front and Back */
-    .card-front,
-    .card-back {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-        transition: transform 0.6s;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .card-front {
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .card-front img {
-        width: 80%;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        transition: transform 0.3s ease;
-    }
-
-    .card-front h2 {
-        font-size: 1.5em;
-    }
-
-    .card-back {
-        background-color: #E62B1E; /* Red back for contrast */
-        color: #fff;
-        transform: rotateY(180deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        text-align: left;
-        font-size: 0.9em;
-    }
-
-    .speaker-card:hover .card-front {
-        transform: rotateY(180deg);
-    }
-
-    .speaker-card:hover .card-back {
-        transform: rotateY(0);
-    }
-
     /* Responsive Design */
     @media (max-width: 768px) {
-        .speakers-container {
-            flex-direction: column;
-            align-items: center;
+        .sub-h1 {
+            font-size: 26px;
         }
-        
-        .speaker-card {
-            width: 80%;
-            margin-bottom: 30px;
+        .sub-p , .closing-h2{
+            font-size: 16px;
+        }
+        .closing-h3 {
+            font-size: 14px; 
+        }
+        .closing-p {
+            font-size: 10px;
+        }
+        #banner {
+            height: 40vh;
         }
     }
 
@@ -221,16 +158,15 @@
     </header>
         
     <main>
-
         <!-- Conference Banner -->
         <section>
             <a href="https://www.townscript.com/in/chennai">
-                <img src="images/conference-banner.png" alt="Conference Banner" style="width: 100%;">
+                <img src="images/conference-banner.png" alt="Conference Banner" style="width: 100%; height: auto;">
             </a>
         </section>
     
         <!-- Three Column Layout -->
-        <section style="display: flex; justify-content: space-between; margin: 20px 0;padding: 20px;">
+        <section style="display: flex; justify-content: space-between; padding: 20px; flex-wrap: wrap;">
             <div style="flex: 1; padding: 20px;">
                 <h1 class="sub-h1">01</h1>
                 <p class="sub-p">One day celebrating ideas that spark conversation and drive meaningful change.</p>
@@ -244,15 +180,14 @@
                 <p class="sub-p">Meet a community of people building a joyful, just, and sustainable future – for all.</p>
             </div>
         </section>
-        
     
         <!-- Secondary Banner -->
-        <section style="position: relative; margin: 20px 0;">
-            <img src="images/conference-banner-4.png" alt="Conference Secondary Banner" style="width: 100%;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: left; color: white;">
-                <h2 style="font-size: 32px; font-weight: bold;">IDEAS SHAPING TOMORROW</h2>
-                <p style="font-size: 16px; margin: 20px 0;">This January TEDxNapierBridge is back. You can expect the same great TEDx talks from the world’s most inspiring and innovative speakers – plus the opportunity to meet a community of people who believe in the transformative power of storytelling and ideas.</p>
-                <p style="font-size: 16px;">Drawing on the themes from past events, TEDxNapierBridge’s Festival of Ideas will connect the dots across different movements and ask how do we solve these complex issues, together? The day will be a true festival, bringing together talks, workshops, and networking events.</p><br><br>
+        <section style="position: relative;">
+            <img id="banner" src="images/conference-banner-4.png" alt="Conference Secondary Banner" style="width: 100%;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: left; color: white; padding: 0 10px;">
+                <h2 class="closing-h2">IDEAS SHAPING TOMORROW</h2>
+                <p class="closing-p">This January TEDxNapierBridge is back. You can expect the same great TEDx talks from the world’s most inspiring and innovative speakers – plus the opportunity to meet a community of people who believe in the transformative power of storytelling and ideas.</p>
+                <p class="closing-p">Drawing on the themes from past events, TEDxNapierBridge’s Festival of Ideas will connect the dots across different movements and ask how do we solve these complex issues, together? The day will be a true festival, bringing together talks, workshops, and networking events.</p><br><br>
                 <a href="https://www.townscript.com/in/chennai" style="background-color: red; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold;">TICKETS</a>
             </div>
         </section>
@@ -263,9 +198,6 @@
                 <h2>Speakers and Performers of TruthCon 2024</h2>
             </div>
             <!-- <h2></h2> -->
-            <!-- <div style="max-width: 800px;"> -->
-            <!-- <button class="arrow-left">&#10094;</button> -->
-
             <div class="speakers-container">
                 <div class="speaker-card">
                     <div class="card-front">
@@ -311,50 +243,42 @@
                     <div class="card-back">
                         <p>Uru Paanar is a Chennai based musical collective that creates uniquely refreshing musical works by playing contemporary rhythms with traditional instruments. Their custom-made instruments initiative draws inspiration from Sangam Literature like Tholkaappiyam. It aims to revive ancient Tamil Panns to create a captivating soundscape that pays homage to the rich cultural heritage of Tamil Nadu.</p>
                     </div>
-                </div> -->
-            <!-- </div>
-            <button class="arrow-right">&#10095;</button> -->
-        </div>
-
+                </div>
+            </div> -->
         </section>
+    
         <!-- Closing Section -->
-        <section style="position: relative; margin: 20px 0;">
-            <img src="images/conference-banner-4.png" alt="Conference Secondary Banner" style="width: 100%; height: auto;">
+        <section style="position: relative;">
+            <img id="banner" src="images/conference-banner-4.png" alt="Conference Secondary Banner" style="width: 100%;">
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: left; color: white; max-width: 800px;">
-                <h2 style="font-size: 32px; font-weight: bold;">HERE’S HOW WE DESIGN A BETTER FUTURE</h2>
-                <p style="font-size: 16px; margin: 20px 0;">
-                    Our events are so much more than sitting in a theatre hearing talks – it’s the first step in taking action.
-                </p>
+                <h2 class="closing-h2">HERE’S HOW WE DESIGN A BETTER FUTURE</h2>
+                <p class="closing-p">Our events are so much more than sitting in a theatre hearing talks – it’s the first step in taking action.</p>
                 <div style="margin-top: 20px;">
                     <div style="margin-bottom: 20px;">
-                        <h3 style="font-size: 24px; margin: 0;">01</h3>
-                        <p style="font-size: 16px; margin: 0;">
-                            We bring people together to unleash the transformational power of ideas and stories. We know stories can change the world because others’ stories have changed us.
-                        </p>
+                        <h3 class="closing-h3">01</h3>
+                        <p class="closing-p">We bring people together to unleash the transformational power of ideas and stories.</p>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <h3 style="font-size: 24px; margin: 0;">02</h3>
-                        <p style="font-size: 16px; margin: 0;">
-                            We bring new friends, allies, and speakers together to create vibrant communities that are building a movement made up of sharing powerful ideas and stories.
-                        </p>
+                        <h3 class="closing-h3">02</h3>
+                        <p class="closing-p">We bring new friends, allies, and speakers together to create vibrant communities.</p>
                     </div>
                     <div style="margin-bottom: 20px;">
-                        <h3 style="font-size: 24px; margin: 0;">03</h3>
-                        <p style="font-size: 16px; margin: 0;">
-                            We bring curiosity, joy, and hope to all of our work – helping you feel empowered to take action on the most pressing issues of our time.
-                        </p>
+                        <h3 class="closing-h3">03</h3>
+                        <p class="closing-p">We bring curiosity, joy, and hope to help you feel empowered to take action.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
+    
+        <section class="container my-4" style="padding: 10px;">
+            <h2 class="mb-3">What is TEDx?</h2>
             <p>
-               <h2> What is TEDx? </h2><br> <br>
-
-                In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.  Our event is called TEDxLondon, where x = independently organized TED event. At our TEDxLondon event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group.  The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
+                In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxLondon, where x = independently organized TED event. At our TEDxLondon event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group.
             </p>
         </section>
+        
     </main>
+    
     
     <br><br><br><hr/>
     <div class="footer">
@@ -383,8 +307,6 @@
             history.scrollRestoration = 'manual';
         }
         window.scrollTo(0, 0);
-        
-
     </script>
 </body>
 </html>
