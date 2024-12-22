@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 
 * {box-sizing: border-box;}
 
 body {
-    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Arimo', sans-serif;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -471,9 +472,12 @@ footer {
 /* Speakers Container */
 .speakers-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;  /* Fixed typo from no-wrap to nowrap */
     justify-content: center;
     gap: 30px;
+    width: 100%;  /* Full page width */
+    overflow: hidden;  /* Hide overflow to only show the visible part */
+    transition: transform 0.5s ease;  /* Smooth transition for sliding effect */
 }
 
 /* Speaker Card Styles */
@@ -482,8 +486,10 @@ footer {
     width: 300px;
     height: 400px;
     perspective: 1000px; /* 3D Perspective */
+    flex-shrink: 0;  /* Prevent shrinking */
 }
 
+/* Card Front and Back */
 .card-front,
 .card-back {
     width: 100%;
@@ -495,13 +501,25 @@ footer {
     overflow: hidden;
 }
 
+.speaker-card {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* This allows the 3D effect */
+}
+
 .card-front {
     color: #fff;
+    background-color: floralwhite;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .card-front img {
@@ -525,6 +543,7 @@ footer {
     padding: 20px;
     text-align: left;
     font-size: 0.9em;
+    border-radius: 10px;
 }
 
 .speaker-card:hover .card-front {
@@ -533,6 +552,35 @@ footer {
 
 .speaker-card:hover .card-back {
     transform: rotateY(0);
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Arrows for navigation */
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
 }
 
 /* Responsive Design */
@@ -1177,7 +1225,7 @@ footer {
 }
 
 .section-header {
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .section-header h2 {
