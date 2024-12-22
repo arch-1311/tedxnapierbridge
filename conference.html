@@ -19,6 +19,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
 
 </head>
 <style>
@@ -37,7 +43,9 @@
     .closing-p {
         font-size: 16px; margin: 0;
     }
-
+    .closing-div {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: left; color: white; padding: 0 10px;
+    }
     #banner {
         height: auto;
     }
@@ -51,23 +59,67 @@
     /* Responsive Design */
     @media (max-width: 768px) {
         .sub-h1 {
-            font-size: 26px;
+            font-size: 35px;
         }
         .sub-p , .closing-h2{
             font-size: 16px;
+            margin-bottom: 0;
         }
         .closing-h3 {
             font-size: 14px; 
         }
         .closing-p {
-            font-size: 10px;
+            font-size: 8px;
+        }
+        .closing-div {
+            left: 40%;
         }
         #banner {
-            height: 40vh;
+            height: 50vh;
         }
         section {
             flex-direction: column;
             align-items: center; /* Optional: Centers the items horizontally */
+        }
+    }
+    /* Basic styling for carousel */
+    .slick-prev, .slick-next , .slick-prev:before, .slick-next:before{
+        
+        font-size: 30px; /* Adjust size as needed */
+        color: black; /* Arrow color */
+        background: none;
+        border: none;
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+    }
+
+    .slick-prev {
+        left: 10px; /* Position for left arrow */
+    }
+
+    .slick-next {
+        right: 10px; /* Position for right arrow */
+    }
+    /* Adjust image width for mobile and desktop */
+    .card img {
+        width: 100%; /* Set the image width to take full width on mobile and smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Mobile-specific styling */
+    @media (max-width: 768px) {
+        .slick-prev, .slick-next {
+            font-size: 24px; /* Adjust size on mobile */
+            color: black; /* Arrow color */
+            background: none;
+            border: none;
+        }
+
+        /* Ensure arrows are visible on mobile */
+        .slick-prev, .slick-next {
+            display: block; /* Force display if necessary */
         }
     }
 
@@ -158,12 +210,12 @@
         <!-- Conference Banner -->
         <section>
             <a href="https://www.townscript.com/in/chennai">
-                <img src="images/conference-banner.png" alt="Conference Banner" style="width: 100%; height: auto;">
+                <img src="images/conference-banner.png" alt="Conference Banner" style="width: 100%; height: auto; margin-top: 5rem;">
             </a>
         </section>
     
         <!-- Three Column Layout -->
-        <section style="display: flex; justify-content: space-between; padding: 20px; flex-wrap: wrap;">
+        <section style="display: flex; justify-content: space-between;  flex-wrap: wrap;">
             <div style="flex: 1; padding: 20px;">
                 <h1 class="sub-h1">01</h1>
                 <p class="sub-p">One day celebrating ideas that spark conversation and drive meaningful change.</p>
@@ -181,10 +233,10 @@
         <!-- Secondary Banner -->
         <section style="position: relative;">
             <img id="banner" src="images/conference-banner-4.png" alt="Conference Secondary Banner" style="width: 100%;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: left; color: white; padding: 0 10px;">
-                <h2 class="closing-h2">IDEAS SHAPING TOMORROW</h2>
+            <div class="closing-div">
+                <h2 class="closing-h2">IDEAS SHAPING TOMORROW</h2><br>
                 <p class="closing-p">This January TEDxNapierBridge is back. You can expect the same great TEDx talks from the world’s most inspiring and innovative speakers – plus the opportunity to meet a community of people who believe in the transformative power of storytelling and ideas.</p>
-                <p class="closing-p">Drawing on the themes from past events, TEDxNapierBridge’s Festival of Ideas will connect the dots across different movements and ask how do we solve these complex issues, together? The day will be a true festival, bringing together talks, workshops, and networking events.</p><br><br>
+                <p class="closing-p">Drawing on the themes from past events, TEDxNapierBridge’s Festival of Ideas will connect the dots across different movements and ask how do we solve these complex issues, together? The day will be a true festival, bringing together talks, workshops, and networking events.</p><br>
                 <a href="https://www.townscript.com/in/chennai" style="background-color: red; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold;">TICKETS</a>
             </div>
         </section>
@@ -197,173 +249,58 @@
         
             <!--carousel-->
             <div class="container">
-                <!-- Carousel for larger screens (3 sliders per slide) -->
-                <div id="carouselExampleCaptions" class="carousel carousel-light slide d-none d-md-block" data-bs-ride="false">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <!-- First slide with 3 cards -->
-                        <div class="carousel-item active">
-                            <div class="card-group">
-                                <div class="card">
-                                    <img src="images/karen-rebelo.jpg" class="card-img-top" alt="Karen Rebelo">
-                                    <div class="card-body bg-dark">
-                                        <h5 class="card-title">Karen Rebelo</h5>
-                                        <p class="card-text">Karen Rebelo is a Deputy Editor at BOOM Live, an independent digital journalism platform with a mission to fight misinformation...</p>
-                                        <p class="card-text"><small class="text-muted"></small></p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="images/muralitharan.jpg" class="card-img-top" alt="Muralitharan">
-                                    <div class="card-body bg-dark">
-                                        <h5 class="card-title">Muralitharan</h5>
-                                        <p class="card-text">Muralitharan is a distinguished journalist at The Collective Newsroom (BBC), covering Tamil Nadu politics, history, and cinema...</p>
-                                        <p class="card-text"><small class="text-muted"></small></p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="images/sindhuja-sankaran.jpg" class="card-img-top" alt="Dr. Sindhuja Sankaran">
-                                    <div class="card-body bg-dark">
-                                        <h5 class="card-title">Dr. Sindhuja Sankaran</h5>
-                                        <p class="card-text">Dr. Sindhuja Sankaran is a social psychologist and a founding member of the psychology department at Sai University...</p>
-                                        <p class="card-text"><small class="text-muted"></small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Second slide with 3 cards -->
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="card">
-                                    <img src="images/nilesh-christopher.jpg" class="card-img-top" alt="Nilesh Christopher">
-                                    <div class="card-body bg-dark">
-                                        <h5 class="card-title">Nilesh Christopher</h5>
-                                        <p class="card-text">Nilesh Christopher is an award-winning freelance journalist, focusing on the human impact of technology adoption...</p>
-                                        <p class="card-text"><small class="text-muted"></small></p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="images/uru-paanar.jpg" class="card-img-top" alt="Uru Paanar">
-                                    <div class="card-body bg-dark">
-                                        <h5 class="card-title">Uru Paanar</h5>
-                                        <p class="card-text">Uru Paanar is a Chennai-based musical collective that creates uniquely refreshing musical works...</p>
-                                        <p class="card-text"><small class="text-muted"></small></p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="images/uru-paanar.jpg" class="card-img-top" alt="Uru Paanar">
-                                    <div class="card-body bg-dark">
-                                        <h5 class="card-title">Uru Paanar</h5>
-                                        <p class="card-text">Uru Paanar is a Chennai-based musical collective that creates uniquely refreshing musical works...</p>
-                                        <p class="card-text"><small class="text-muted"></small></p>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Slick carousel for larger screens -->
+                <div class="slick-carousel d-none d-md-block">
+                    <div class="card">
+                        <img src="images/karen-rebelo.jpg" class="card-img-top" alt="Karen Rebelo">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">Karen Rebelo</h5>
+                            <p class="card-text">Karen Rebelo is a Deputy Editor at BOOM Live, an independent digital journalism platform with a mission to fight misinformation...</p>
                         </div>
                     </div>
-                    <!-- Carousel controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="card">
+                        <img src="images/muralitharan.jpg" class="card-img-top" alt="Muralitharan">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">Muralitharan</h5>
+                            <p class="card-text">Muralitharan is a distinguished journalist at The Collective Newsroom (BBC), covering Tamil Nadu politics, history, and cinema...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/sindhuja-sankaran.jpg" class="card-img-top" alt="Dr. Sindhuja Sankaran">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">Dr. Sindhuja Sankaran</h5>
+                            <p class="card-text">Dr. Sindhuja Sankaran is a social psychologist and a founding member of the psychology department at Sai University...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/nilesh-christopher.jpg" class="card-img-top" alt="Nilesh Christopher">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">Nilesh Christopher</h5>
+                            <p class="card-text">Nilesh Christopher is an award-winning freelance journalist, focusing on the human impact of technology adoption...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/uru-paanar.jpg" class="card-img-top" alt="Uru Paanar">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">Uru Paanar</h5>
+                            <p class="card-text">Uru Paanar is a Chennai-based musical collective that creates uniquely refreshing musical works by playing contemporary rhythms with traditional instruments</p>
+                        </div>
+                    </div>
                 </div>
+                <!-- Slick carousel for mobile screens -->
+                <div class="slick-carousel d-block d-md-none">
+                    <div class="card">
+                        <img src="images/karen-rebelo.jpg" class="card-img-top" alt="Karen Rebelo">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">Karen Rebelo</h5>
+                            <p class="card-text">Karen Rebelo is a Deputy Editor at BOOM Live...</p>
+                        </div>
+                    </div>                    
+                    <!-- More cards... -->
+                </div>
+
+            </div>   
                 
-                <!-- Speaker cards for mobile view (6 sliders per slide) -->
-                <div id="carouselExampleCaptionsMobile" class="carousel carousel-light slide d-block d-md-none" data-bs-ride="false">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <!-- First speaker -->
-                        <div class="carousel-item active">
-                            <div class="card">
-                                <img src="images/karen-rebelo.jpg" class="card-img-top" alt="Karen Rebelo">
-                                <div class="card-body bg-dark">
-                                    <h5 class="card-title">Karen Rebelo</h5>
-                                    <p class="card-text">Karen Rebelo is a Deputy Editor at BOOM Live, an independent digital journalism platform with a mission to fight misinformation...</p>
-                                    <p class="card-text"><small class="text-muted"></small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Second speaker -->
-                        <div class="carousel-item">
-                            <div class="card">
-                                <img src="images/muralitharan.jpg" class="card-img-top" alt="Muralitharan">
-                                <div class="card-body bg-dark">
-                                    <h5 class="card-title">Muralitharan</h5>
-                                    <p class="card-text">Muralitharan is a distinguished journalist at The Collective Newsroom (BBC), covering Tamil Nadu politics, history, and cinema...</p>
-                                    <p class="card-text"><small class="text-muted"></small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Third speaker -->
-                        <div class="carousel-item">
-                            <div class="card">
-                                <img src="images/sindhuja-sankaran.jpg" class="card-img-top" alt="Dr. Sindhuja Sankaran">
-                                <div class="card-body bg-dark">
-                                    <h5 class="card-title">Dr. Sindhuja Sankaran</h5>
-                                    <p class="card-text">Dr. Sindhuja Sankaran is a social psychologist and a founding member of the psychology department at Sai University...</p>
-                                    <p class="card-text"><small class="text-muted"></small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Fourth speaker -->
-                        <div class="carousel-item">
-                            <div class="card">
-                                <img src="images/nilesh-christopher.jpg" class="card-img-top" alt="Nilesh Christopher">
-                                <div class="card-body bg-dark">
-                                    <h5 class="card-title">Nilesh Christopher</h5>
-                                    <p class="card-text">Nilesh Christopher is an award-winning freelance journalist, focusing on the human impact of technology adoption...</p>
-                                    <p class="card-text"><small class="text-muted"></small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Fifth speaker -->
-                        <div class="carousel-item">
-                            <div class="card">
-                                <img src="images/uru-paanar.jpg" class="card-img-top" alt="Uru Paanar">
-                                <div class="card-body bg-dark">
-                                    <h5 class="card-title">Uru Paanar</h5>
-                                    <p class="card-text">Uru Paanar is a Chennai-based musical collective that creates uniquely refreshing musical works...</p>
-                                    <p class="card-text"><small class="text-muted"></small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Sixth speaker -->
-                        <div class="carousel-item">
-                            <div class="card">
-                                <img src="images/uru-paanar.jpg" class="card-img-top" alt="Uru Paanar">
-                                <div class="card-body bg-dark">
-                                    <h5 class="card-title">Uru Paanar</h5>
-                                    <p class="card-text">Uru Paanar is a Chennai-based musical collective that creates uniquely refreshing musical works...</p>
-                                    <p class="card-text"><small class="text-muted"></small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Carousel controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>              
         </section>
         
         <!-- Closing Section -->
@@ -420,13 +357,45 @@
         <br/>
     </div>
 <!-- Include Bootstrap JS (if not already included in your project) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Include Slick Carousel CSS and JS -->
+
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <script src="scripts.js"></script>
     <script>
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
         window.scrollTo(0, 0);
+        $(document).ready(function() {
+    // Initialize Slick for desktop view
+    $('.slick-carousel.d-none.d-md-block').slick({
+        slidesToShow: 3,      // Show 3 cards at a time for larger screens
+        slidesToScroll: 1,    // Scroll 1 card at a time
+        autoplay: true,       // Enable autoplay
+        autoplaySpeed: 2000,  // Speed for autoplay (2 seconds)
+        dots: true,           // Enable navigation dots
+        arrows: true,         // Enable arrows
+        prevArrow: '<button type="button" class="slick-prev"></button>', // Custom left arrow
+        nextArrow: '<button type="button" class="slick-next"></button>', // Custom right arrow
+    });
+
+    // Initialize Slick for mobile view
+    $('.slick-carousel.d-block.d-md-none').slick({
+        slidesToShow: 1,      // Show 1 card at a time on smaller screens
+        slidesToScroll: 1,    // Scroll 1 card at a time
+        autoplay: true,       // Enable autoplay
+        autoplaySpeed: 2000,  // Speed for autoplay (2 seconds)
+        dots: true,           // Enable navigation dots
+        arrows: true,         // Enable arrows for mobile view
+        prevArrow: '<button type="button" class="slick-prev"></button>', // Custom left arrow
+        nextArrow: '<button type="button" class="slick-next"></button>', // Custom right arrow
+    });
+});
+
+
     </script>
 </body>
 </html>
