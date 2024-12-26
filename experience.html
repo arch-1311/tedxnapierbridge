@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <title>TEDxNapier Bridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
+</head>
+<style>
+    .sidebar {
+        background-color: #f8f9fa;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        top: 7rem;
+    }
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+    .sidebar ul li a {
+        text-decoration: none;
+        color: #000;
+    }
+    .sidebar ul li a:hover {
+        text-decoration: underline;
+    }
+    .content {
+        padding: 20px;
+    }
+    .content p {
+        animation: none; /*    animation: fadeIn 2s ease-in 0.5s;*/
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    .scroll-to-top {
+        text-decoration: none; /* Removes underline */
+        color: inherit; /* Inherits color from parent or sets it to default */
+    }
+    .simple-list-example-scrollspy {
+      position: fixed;
+    }
+
+</style>
+<body>
+    <!-- Header Section -->
+<header>
+    <!-- Top Row with Vision and Social Media -->
+    <div class="top-row">
+        <div class="vision">
+            <span>Our vision is to be a catalyst for positive change, opening minds with inspiring ideas.</span>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/TEDxNapierBridge/" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/tedxnapierbridge/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com/tedxnapier" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="mailto:team@tedxnapierbridge.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+
+    <!-- Bottom Row with Logo, Navigation, and Donate -->
+    <div class="bottom-row d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="home.html">
+                <img class="img-fluid" src="images/10-Logo.png" alt="Logo" style="width: 200px; height: auto;">
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Attend <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="conference.html">Conference</a></li>
+                        <li><a href="salon.html">Salon</a></li>
+                        <li><a href="adventure.html">Adventure X</a></li>
+                    </ul>
+                </li>
+                <li><a href="watch.html">Watch</a></li>
+                <li><a href="past-events.html">Past Events</a></li>
+                <li class="dropdown">
+                    <a href="#">Connect <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Partners <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="current-partners.html">Current Partners</a></li>
+                        <li><a href="become-partner.html">Become a Partner</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">About <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Donate Button -->
+        <div class="donate-btn">
+            <a href="donate.html">DONATE</a>
+        </div>
+    </div>
+</header>
+<!-- position: relative;
+    padding: 1rem;
+    margin: 6rem 1rem; -->
+<!-- Main Content -->
+<main class="container">
+    <div class="row" style="margin: 8rem 1rem; ">
+      <!-- Fixed Left Navbar -->
+      <div class="col-md-4" style="text-align: left;">
+        <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+          <a class="p-1 rounded" href="#simple-list-item-1">Your TED Experience</a>
+          <a class="p-1 rounded" href="#simple-list-item-2">Your community</a>
+          <a class="p-1 rounded active" href="#simple-list-item-3">The TED theater</a>
+          <a class="p-1 rounded" href="#simple-list-item-4">Discovery Sessions</a>
+          <a class="p-1 rounded" href="#simple-list-item-5">Breaks for Connection</a>
+        </div>
+      </div>
+
+      <!-- Scrollable Content -->
+      <div class="col-md-8">
+        <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+          <h4 id="simple-list-item-1">Your TED Experience</h4>
+          <p>The TED Conference experience is like none other. Whether you’re a TED enthusiast or it’s your very first time joining us, this dynamic week is sure to become a highlight of your year.
+
+            From the electric moments in the TED Theater, when a talk resonates so deeply that you are overtaken by goosebumps, to the joy of making an unexpected new connection that lasts a lifetime.
+            
+            It's an enduring rush of inspiration. Get a glimpse of what we’re planning for you at TED2025.</p>
+          <h4 id="simple-list-item-2">Your community</h4>
+          <p>TED brings together a unique group of thinkers, doers, leaders and dreamers — a wide spectrum of individuals whose humility, kindness and generosity speak louder than their brilliance.
+
+            Members of the TED community are on a journey of lifelong learning, with fierce determination to make the world a better place.
+            
+            Get ready, because at TED there are no strangers, just friends you’ve not yet met!</p>
+          <h4 id="simple-list-item-3">The TED theater</h4>
+          <p>Architect and experience designer David Rockwell crafted the incredible pop-up theater for TED, using 8,000 custom pieces of Douglas Fir. Each year, a dedicated team lovingly assembles this architectural wonder, and after five days, the air is filled with a fresh, woody aroma, signaling that “it’s time for TED.” 
+
+            The theater’s closeness to the speakers creates a communal vibe similar to that of a campfire. Every spot offers the ultimate viewing experience with a mix of seating options like couches, balcony spots, cozy chairs and wheelchair-accessible seating.</p>
+          <h4 id="simple-list-item-4">Discovery Sessions</h4>
+          <p>Not all great ideas are shared from a stage; some require closer exploration. Discovery Sessions bring ideas to life through expert-led experiences, in-the-field workshops, activities and excursions, all curated with an unparalleled understanding of what makes these sessions sing (yes, sometimes literally). 
+
+            Sign up for bucket list activities that get you out, moving and interacting with ideas and connecting with others in unexpected ways. </p>
+          <h4 id="simple-list-item-5">Breaks for Connection</h4>
+          <p>A vital part of the TED experience, networking breaks are dedicated times for you to build deep human connections — one-on-one or in groups.
+
+            Immerse yourself in dynamic discussions and serendipitous encounters with attendees and speakers over a barista-brewed coffee or snack.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<!-- Footer -->
+<br><br><br><hr/>
+<div class="footer">
+    <div class="contact-container">
+        <a href="https://www.instagram.com/tedxnapierbridge/" target="_blank" class="contact-icon">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="mailto:team@tedxnapierbridge.com" class="contact-icon">
+            <i class="bi bi-envelope"></i>
+        </a>
+        <a href="https://www.facebook.com/TEDxNapierBridge/" target="_blank" class="contact-icon">
+            <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://twitter.com/tedxnapier" target="_blank" class="contact-icon">
+            <i class="bi bi-twitter"></i>
+        </a>
+    </div>
+    <br/>
+    <div><strong>This independently organized TEDx event is operated under license from <a href="http://ted.com/" target="_blank" style="color: #E62B1E; font-weight: bold;">TED</a>.</strong></div>
+    <br/>
+</div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
+    <script>
+        function toggleNavbar() {
+            const navbarList = document.getElementById('navbar-list');
+            const toggleButton = document.querySelector('.toggle-navbar i');
+            
+            if (navbarList.classList.contains('d-none')) {
+                navbarList.classList.remove('d-none');
+                toggleButton.classList.remove('bi-chevron-up');
+                toggleButton.classList.add('bi-chevron-down');
+            } else {
+                navbarList.classList.add('d-none');
+                toggleButton.classList.remove('bi-chevron-down');
+                toggleButton.classList.add('bi-chevron-up');
+            }
+        }
+    </script>
+</body>
+
+</html>
