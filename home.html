@@ -16,20 +16,11 @@
 </head>
 <style>
     .banner {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      overflow: hidden;
+        position: relative; width: 100vw; height: 70vh; overflow: hidden; background-color: black;
     }
 
     .banner iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
+        position: absolute; top: 50%; left: 50%; width: 100vw; height: 90vh; transform: translate(-50%, -50%); z-index: 0;
     }
 
     .text-container {
@@ -50,53 +41,59 @@
 
     .text-container .dynamic-text {
         font-size: 2rem;
-        /* margin-top: 1rem; */
-        height: 2.6rem;
-        overflow: hidden;
-        position: relative;
-        color : red;
-    }
-
-    .text-container .dynamic-text span {
-        display: block;
-        position: absolute;
-        width: 100%;
-        animation: slideText 16s infinite;
-    }
-    .text-container {
-        position: relative;
-        text-align: left;
-    }
-
-    .dynamic-text {
-        font-size: 2rem;
-        /* margin-top: 1rem; */
         height: 2.5rem;
         overflow: hidden;
         display: inline-block;
         white-space: nowrap;
     }
 
-    .typing {
-        border-right: 2px solid black; /* Typing cursor */
-        padding-right: 5px;
-        animation: typing 1.5s steps(30) 1, blink 0.75s step-end infinite;
+.typing {
+    border-right: 5px solid rgb(255, 253, 253); /* Typing cursor */
+    padding-right: 5px;
+    animation: typing 1s steps(20) 1, blink 0.5s step-end infinite; /* Increased typing speed */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-container h1 {
+        font-size: 2rem;
     }
 
-    @keyframes typing {
-        from {
-            width: 0;
-        }
-        to {
-            width: 100%;
-        }
+    .text-container .dynamic-text {
+        font-size: 1.5rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-container h1 {
+        font-size: 1.2rem;
     }
 
-    @keyframes blink {
-        50% {
-            border-color: transparent;
-        }
+    .text-container .dynamic-text {
+        font-size: 1.2rem;
+        height: 1.6rem;
     }
+
+    .banner {
+        height: 30vh;
+    }
+}
+
 
     .overlay {
         position: absolute;
@@ -145,6 +142,176 @@
             height: 30vh;
           }
         }
+        /* Cursor styling */
+        #typewriter-cursor {
+            font-size: inherit;
+            color: rgb(255, 255, 255);
+            animation: blink 0.7s step-start infinite;
+        }
+
+        /* Blinking animation */
+        @keyframes blink {
+            50% {
+            opacity: 0;
+            }
+        }
+        .banner-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, #d21d1d, #ffc300); 
+            color: white;
+            padding: 50px 120px;
+            width: 100vw;
+        }
+
+        .banner-left {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: flex-start;
+        }
+
+        .banner-left h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .banner-left h1 span {
+            color: #fff;
+            display: block;
+        }
+
+        .banner-deco {
+            display: flex;
+            margin-top: 10px;
+            gap: 5px;
+        }
+
+        .banner-deco span {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .banner-right {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-right p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: left;
+            max-width: 600px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .banner-section {
+            flex-direction: column;
+            text-align: center;
+            padding: 50px;
+            }
+
+            .banner-left,
+            .banner-right {
+            flex: unset;
+            text-align: left;
+            padding: 20px;
+            }
+
+            .banner-left h1 {
+            font-size: 2.5rem;
+            }
+
+            .banner-right p {
+            font-size: 1rem;
+            }
+        }
+
+         /* Parallax Background */
+  .parallax-bg {
+    /* background: url('images/newsletter-background.jpg') no-repeat center center fixed; */
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2); /* Parallax effect */
+  }
+
+  .instagram-section {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+  }
+
+  .instagram-content {
+    z-index: 2;
+    padding: 20px;
+  }
+
+  .instagram-content h2 {
+    font-size: 2.5rem;
+    color: #d21d1d; /* TEDx Red */
+    margin-bottom: 20px;
+  }
+
+  .instagram-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .insta-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .insta-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+   /* Mobile Responsiveness */
+   @media (max-width: 768px) {
+    .instagram-content h2 {
+      font-size: 2rem;
+    }
+
+    .instagram-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+    }
+    .instagram-section {
+        height: 30vh;
+    }
+  }
     </style>
     <body>
         <!-- <div class="bg-animation">
@@ -228,22 +395,35 @@
           </div>
       </header>
       
-        <div class="banner">
-          <iframe 
-              src="https://www.youtube.com/embed/N-l1xtCMnpw?autoplay=1&mute=1&loop=1&playlist=N-l1xtCMnpw" 
-              frameborder="0" 
-              allow="autoplay; fullscreen"
-              style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 90vh; transform: translate(-50%, -50%); z-index: -1;">
-          </iframe>
-          <div class="overlay"></div>
-          <div class="text-container">
-              <h1>For the curious</h1>
-              <h1><span class="dynamic-text" id="dynamic-text"></span></h1>
-              <br><h1>We&#39;re TEDxNapier Bridge <br> where ideas and curious meet </h1>
-          </div>
+      <div class="banner">
+        <!-- Vimeo Video -->
+        <iframe 
+            src="https://player.vimeo.com/video/643600961?autoplay=1&loop=1&muted=1&background=1" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen
+            >
+        </iframe>
+    
+        <!-- Overlay and Text -->
+        <div class="overlay"></div>
+        <div class="text-container" style="position: relative; z-index: 2;">
+            <h1>For the curious</h1>
+            
+            <h1 id="slider-1-slide-1-layer-2" style="color: rgb(255, 58, 45);">
+                <span id="typewriter-text"></span>
+                <span id="typewriter-cursor" style="display: inline;">|</span>
+            </h1>
+              
+
+            <h1>We&#39;re <span style="color: rgb(255, 58, 45);">TEDxNapier Bridge</span>
+            <h1>where ideas and curious meet</h1>
+        </div>
+    </div>
+    
       </div>
   
-    <main style="max-width: 950px;">
+    <main>
     <!--dark and light theme icon -->
     <!-- <div>
         <input type="checkbox" class="checkbox" id="checkbox">
@@ -263,29 +443,50 @@
             <a href="#contact" class="button">Contact Us</a>
         </div>
     </section> -->
-    <section id="home" class="exhibition-section">
-        <div class="section-header">
-            <br>
-            <!-- <p>🔆  Powerful ideas 💡​  Experience Zones ⛺ Scrumptious snacks 🍱 New Connections 🌐 Gift Bag 🎁 - That's TEDxNapier Bridge</p><br> -->
-            <h2>Upcoming Event at TEDxNapier Bridge - TruthCon | Apr 2024</h2>
+    <div class="banner-section">
+        <div class="banner-left" style="text-align: left;">
+          <h1><span>TEDxNapier Bridge</span> turns <span>TEN</span></h1>
+          <!-- <div class="banner-deco">
+            <span>•</span><span>•</span><span>•</span><span>•</span>
+          </div> -->
         </div>
-        <!-- <h2></h2> -->
-        <div class="exhibition-content">
-            <img src="images/exhibition.jpg" alt="Exhibition Image" class="exhibition-image">
-           
-            <p>Free entry to exhibition on Apr 27 & Apr 28</p>
-            <p>An open-to-all exhibition exploring the nuances of how misinformation affects our lives and the role AI plays in both its creation and mitigation. Walk through a plethora of interactive exhibits to gain valuable insights into the underlying structures that fuel misinformation and its tangible impacts on our lives.</p>
-            <ul>
-                <li>Interactive and thought-provoking exhibits</li>
-                <li>Learn gamified ways to build resistance against misinformation</li>
-                <li>Opportunity to network with diverse individuals</li>
-            </ul>
-            <p><strong>Date and Time:</strong> Apr 27 (3.00pm - 7.00pm) & Apr 28 (10.30am - 6.30pm)</p>
-            <p><strong>Venue:</strong> Kamarajar Arangam, Anna Salai</p>
-            <a href="https://bit.ly/truthcon-tedx" class="register-now-button">REGISTER NOW FOR FREE</a>
+        <div class="banner-right">
+          <p>
+            Celebrate with us 10 years of connecting Chennai’s communities and fostering growth. 
+            Built as a marvel of design and engineering, Napier Bridge continues to stand as a 
+            symbol of strength and unity. Join us in honoring this milestone!
+          </p>
         </div>
-    </section>
-
+      </div>
+      
+      <div class="instagram-section mt-5">
+        <div class="parallax-bg"></div>
+        <div class="instagram-content">
+          <h2>Instagram Feed</h2>
+          <div class="instagram-grid">
+            <!-- Replace these with your Instagram posts and reel links -->
+            <a href="https://www.instagram.com/p/DCg1a7WSJnT/" target="_blank" class="insta-item">
+              <img src="images/insta-post1.png" alt="Post 1">
+            </a>
+            <a href="https://www.instagram.com/p/DCMSxqnyCt4/?img_index=1" target="_blank" class="insta-item">
+              <img src="images/insta-post5.png" alt="Post 2">
+            </a>
+            <a href="https://www.instagram.com/p/DCHQxGLSoV3/?img_index=1" target="_blank" class="insta-item">
+              <img src="images/insta-post1.png" alt="Post 3">
+            </a>
+            <a href="https://www.instagram.com/p/DAVyS8YNrTs/?img_index=1" target="_blank" class="insta-item">
+              <img src="images/insta-post5.png" alt="Post 4">
+            </a>
+            <a href="https://www.instagram.com/p/C_A1h5vNDS7/?img_index=1" target="_blank" class="insta-item">
+              <img src="images/insta-post1.png" alt="Post 5">
+            </a>
+            <a href="https://www.instagram.com/p/C4se6m2oCka/?img_index=1" target="_blank" class="insta-item">
+              <img src="images/insta-post5.png" alt="Post 6">
+            </a>
+          </div>
+        </div>
+      </div>
+      
     <!-- <section id="partners" class="partner-section">
         <div class="section-header">
             <h2>Partners of our TEDxNapier Bridge TruthCon | Apr 2024</h2>
@@ -352,44 +553,54 @@
    
     <script src="scripts.js"></script>
     <script>
-      const phrases = [
-        'who ask why...',
-        'who are rooted in wonder...',
-        'who seek knowledge...',
-        'who stay grounded...',
-        'who ask why not...'
-      ];
+        // Define the lines for the typewriter
+        const typewriterLines = [
+          "who ask why",
+          "who are rooted in wonder",
+          "who seek knowledge",
+          "who stay grounded",
+          "who ask why not",
+        ];
+      
+        const typewriterText = document.getElementById("typewriter-text");
+        const typewriterCursor = document.getElementById("typewriter-cursor");
 
-      const dynamicText = document.getElementById('dynamic-text');
+        let lineIndex = 0; // To track the current line
+        let charIndex = 0; // To track the current character
+        let isDeleting = false; // To determine if we are deleting text
+        const typingSpeed = 90; // Speed of typing
+        const deletionSpeed = 50; // Speed of deleting
+        const delayBetweenLines = 1000; // Pause between lines
 
-      let phraseIndex = 0;
-      let charIndex = 0;
-      let deleting = false;
+        function type() {
+            // Get the current line
+            const currentLine = typewriterLines[lineIndex];
+            // Calculate the displayed text
+            const displayedText = isDeleting
+            ? currentLine.substring(0, charIndex--)
+            : currentLine.substring(0, charIndex++);
 
-      function type() {
-          if (deleting) {
-              if (charIndex > 0) {
-                  dynamicText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
-                  charIndex--;
-                  setTimeout(type, 100); // Speed of deleting
-              } else {
-                  deleting = false;
-                  phraseIndex = (phraseIndex + 1) % phrases.length;
-                  setTimeout(type, 500); // Pause before typing next phrase
-              }
-          } else {
-              if (charIndex < phrases[phraseIndex].length) {
-                  dynamicText.textContent = phrases[phraseIndex].substring(0, charIndex + 1);
-                  charIndex++;
-                  setTimeout(type, 50); // Speed of typing
-              } else {
-                  deleting = true;
-                  setTimeout(type, 500); // Pause after typing the full phrase
-              }
-          }
-      }
-      type(); // Start the typing effect
-  </script>
+            // Update the text in the element
+            typewriterText.innerHTML = displayedText;
+
+            // Determine the next action
+            if (!isDeleting && charIndex === currentLine.length) {
+            // Pause at the end of a line
+            setTimeout(() => (isDeleting = true), delayBetweenLines);
+            } else if (isDeleting && charIndex === 0) {
+            // Move to the next line
+            isDeleting = false;
+            lineIndex = (lineIndex + 1) % typewriterLines.length;
+            }
+
+            // Call the function again with appropriate speed
+            setTimeout(type, isDeleting ? deletionSpeed : typingSpeed);
+        }
+
+        // Start the typewriter effect
+        document.addEventListener("DOMContentLoaded", type);
+      </script>
+      
     
 </body>
 </html>
