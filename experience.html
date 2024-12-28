@@ -54,7 +54,48 @@
     .simple-list-example-scrollspy {
       position: fixed;
     }
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
 
+    .image-grid img {
+        width: 100%;
+        height: 100px; /* Fixed height for square boxes */
+        object-fit: cover; /* Ensures images fill the box without distortion */
+        border-radius: 5px; /* Optional: Rounded corners */
+        border: 1px solid #ddd; /* Optional: Border for better separation */
+    }
+    @media (max-width: 768px) {
+    .row > .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    img.img-fluid {
+        margin-top: 15px;
+    }
+    }
+    a.p-1 {
+        display: block; /* Ensures links stack vertically */
+        color: #333; /* Neutral text color */
+        text-decoration: none; /* Removes underline */
+        padding: 10px; /* Adds padding for clickable area */        
+        font-weight: bold; /* Makes text stand out */
+    }
+
+    /* Hover effect for highlighting */
+    a.p-1:hover {
+        background-color: #fcfcfc; /* Light gray background on hover */
+        color: #000; /* Darker text color on hover */
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    /* Active link style */
+    a.p-1.active {
+        background-color: #efefef; /* Highlighted background for active link */
+        color: #000; /* Darker text for active link */
+    }
 </style>
 <body>
     <!-- Header Section -->
@@ -138,49 +179,161 @@
     margin: 6rem 1rem; -->
 <!-- Main Content -->
 <main class="container">
-    <div class="row" style="margin: 8rem 1rem; ">
+    <div class="row" style="margin: 8rem 1rem;">
       <!-- Fixed Left Navbar -->
-      <div class="col-md-4" style="text-align: left;">
-        <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <!-- <div class="col-md-4" style="text-align: left;">
+        <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-left">
+          <strong><h6><u>The Conference Experience</u></h6></strong>
           <a class="p-1 rounded" href="#simple-list-item-1">Your TED Experience</a>
           <a class="p-1 rounded" href="#simple-list-item-2">Your community</a>
           <a class="p-1 rounded active" href="#simple-list-item-3">The TED theater</a>
           <a class="p-1 rounded" href="#simple-list-item-4">Discovery Sessions</a>
           <a class="p-1 rounded" href="#simple-list-item-5">Breaks for Connection</a>
         </div>
+      </div> -->
+      <!-- Desktop Navigation -->
+      
+      <div class="col-md-4" style="text-align: left;">
+        <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-left d-none d-md-block">
+          <strong><h6><u>The Conference Experience</u></h6></strong>
+          <a class="p-1 rounded" href="#simple-list-item-1">Your TED Experience</a>
+          <a class="p-1 rounded" href="#simple-list-item-2">Your community</a>
+          <a class="p-1 rounded" href="#simple-list-item-3">The TED theater</a>
+          <a class="p-1 rounded" href="#simple-list-item-4">Discovery Sessions</a>
+          <a class="p-1 rounded" href="#simple-list-item-5">Breaks for Connection</a>
+        </div>
       </div>
 
+      <!-- Mobile Dropdown -->
+      <div class="d-block d-md-none mb-2 fixed-bottom bg-light py-2">
+        <select class="form-select" onchange="location = this.value;">
+          <option value="#">The Conference Experience</option>
+          <option value="#simple-list-item-1">Your TED Experience</option>
+          <option value="#simple-list-item-2">Your community</option>
+          <option value="#simple-list-item-3">The TED theater</option>
+          <option value="#simple-list-item-4">Discovery Sessions</option>
+          <option value="#simple-list-item-5">Breaks for Connection</option>
+        </select>
+      </div>
+  
       <!-- Scrollable Content -->
       <div class="col-md-8">
         <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-          <h4 id="simple-list-item-1">Your TED Experience</h4>
-          <p>The TED Conference experience is like none other. Whether you’re a TED enthusiast or it’s your very first time joining us, this dynamic week is sure to become a highlight of your year.
-
-            From the electric moments in the TED Theater, when a talk resonates so deeply that you are overtaken by goosebumps, to the joy of making an unexpected new connection that lasts a lifetime.
-            
-            It's an enduring rush of inspiration. Get a glimpse of what we’re planning for you at TED2025.</p>
-          <h4 id="simple-list-item-2">Your community</h4>
-          <p>TED brings together a unique group of thinkers, doers, leaders and dreamers — a wide spectrum of individuals whose humility, kindness and generosity speak louder than their brilliance.
-
-            Members of the TED community are on a journey of lifelong learning, with fierce determination to make the world a better place.
-            
-            Get ready, because at TED there are no strangers, just friends you’ve not yet met!</p>
-          <h4 id="simple-list-item-3">The TED theater</h4>
-          <p>Architect and experience designer David Rockwell crafted the incredible pop-up theater for TED, using 8,000 custom pieces of Douglas Fir. Each year, a dedicated team lovingly assembles this architectural wonder, and after five days, the air is filled with a fresh, woody aroma, signaling that “it’s time for TED.” 
-
-            The theater’s closeness to the speakers creates a communal vibe similar to that of a campfire. Every spot offers the ultimate viewing experience with a mix of seating options like couches, balcony spots, cozy chairs and wheelchair-accessible seating.</p>
-          <h4 id="simple-list-item-4">Discovery Sessions</h4>
-          <p>Not all great ideas are shared from a stage; some require closer exploration. Discovery Sessions bring ideas to life through expert-led experiences, in-the-field workshops, activities and excursions, all curated with an unparalleled understanding of what makes these sessions sing (yes, sometimes literally). 
-
-            Sign up for bucket list activities that get you out, moving and interacting with ideas and connecting with others in unexpected ways. </p>
-          <h4 id="simple-list-item-5">Breaks for Connection</h4>
-          <p>A vital part of the TED experience, networking breaks are dedicated times for you to build deep human connections — one-on-one or in groups.
-
-            Immerse yourself in dynamic discussions and serendipitous encounters with attendees and speakers over a barista-brewed coffee or snack.</p>
+          <!-- Section 1 -->
+          <div class="row mb-5" id="simple-list-item-1">
+            <div class="col-md-4">
+              <h4>Your TED Experience</h4>
+              
+            </div>
+            <div class="col-md-8">
+                <p>The TED Conference experience is like none other. Whether you’re a TED enthusiast or it’s your very first time joining us, this dynamic week is sure to become a highlight of your year.
+<br> <br>
+                    From the electric moments in the TED Theater, when a talk resonates so deeply that you are overtaken by goosebumps, to the joy of making an unexpected new connection that lasts a lifetime.<br><br>
+                    
+                    It's an enduring rush of inspiration. Get a glimpse of what we’re planning for you at TED2025.</p>
+            </div>
+            <div class="col-md-12">
+                <div class="image-grid">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/6688679a73993a6c17926f7d_TED2024_20240415_1RL1751-medium.jpg" alt="TED Experience">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668867ad8e8952a0017dfe73_TED2024_20240416_1GT4109-medium.jpg" alt="TED Community">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668866a41f8ddc0f3968874e_TED2024_20240418_1JT5166-medium.jpg" alt="TED Theater">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Discovery Sessions">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Breaks for Connection">
+                </div>
+              </div>              
+          </div>
+  
+          <!-- Section 2 -->
+          <div class="row mb-5" id="simple-list-item-2">
+            <div class="col-md-4">
+              <h4>Your community</h4>
+            </div>
+            <div class="col-md-8">              
+                <p>TED brings together a unique group of thinkers, doers, leaders and dreamers — a wide spectrum of individuals whose humility, kindness and generosity speak louder than their brilliance.
+<br><br>
+                    Members of the TED community are on a journey of lifelong learning, with fierce determination to make the world a better place.
+                    <br><br>
+                    Get ready, because at TED there are no strangers, just friends you’ve not yet met!</p>
+            </div>
+            <div class="col-md-12">
+                <div class="image-grid">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/6688679a73993a6c17926f7d_TED2024_20240415_1RL1751-medium.jpg" alt="TED Experience">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668867ad8e8952a0017dfe73_TED2024_20240416_1GT4109-medium.jpg" alt="TED Community">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668866a41f8ddc0f3968874e_TED2024_20240418_1JT5166-medium.jpg" alt="TED Theater">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Discovery Sessions">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Breaks for Connection">
+                </div>
+              </div>
+              
+          </div>
+  
+          <!-- Section 3 -->
+          <div class="row mb-5" id="simple-list-item-3">
+            <div class="col-md-4">
+              <h4>The TED theater</h4>
+            </div>
+            <div class="col-md-8">              
+                <p>Architect and experience designer David Rockwell crafted the incredible pop-up theater for TED, using 8,000 custom pieces of Douglas Fir. Each year, a dedicated team lovingly assembles this architectural wonder, and after five days, the air is filled with a fresh, woody aroma, signaling that “it’s time for TED.” 
+<br><br>
+                    The theater’s closeness to the speakers creates a communal vibe similar to that of a campfire. Every spot offers the ultimate viewing experience with a mix of seating options like couches, balcony spots, cozy chairs and wheelchair-accessible seating.</p>
+            </div>
+            <div class="col-md-12">
+                <div class="image-grid">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/6688679a73993a6c17926f7d_TED2024_20240415_1RL1751-medium.jpg" alt="TED Experience">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668867ad8e8952a0017dfe73_TED2024_20240416_1GT4109-medium.jpg" alt="TED Community">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668866a41f8ddc0f3968874e_TED2024_20240418_1JT5166-medium.jpg" alt="TED Theater">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Discovery Sessions">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Breaks for Connection">
+                </div>
+              </div>              
+          </div>
+  
+          <!-- Section 4 -->
+          <div class="row mb-5" id="simple-list-item-4">
+            <div class="col-md-4">
+              <h4>Discovery Sessions</h4>
+            </div>
+            <div class="col-md-8">
+                <p>Not all great ideas are shared from a stage; some require closer exploration. Discovery Sessions bring ideas to life through expert-led experiences, in-the-field workshops, activities and excursions, all curated with an unparalleled understanding of what makes these sessions sing (yes, sometimes literally). 
+<br><br>
+                    Sign up for bucket list activities that get you out, moving and interacting with ideas and connecting with others in unexpected ways. </p>              
+            </div>
+            <div class="col-md-12">
+                <div class="image-grid">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/6688679a73993a6c17926f7d_TED2024_20240415_1RL1751-medium.jpg" alt="TED Experience">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668867ad8e8952a0017dfe73_TED2024_20240416_1GT4109-medium.jpg" alt="TED Community">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668866a41f8ddc0f3968874e_TED2024_20240418_1JT5166-medium.jpg" alt="TED Theater">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Discovery Sessions">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Breaks for Connection">
+                </div>
+              </div>              
+          </div>
+  
+          <!-- Section 5 -->
+          <div class="row mb-5" id="simple-list-item-5">
+            <div class="col-md-4">
+              <h4>Breaks for Connection</h4>
+            </div>
+            <div class="col-md-8">
+              <p>A vital part of the TED experience, networking breaks are dedicated times for you to build deep human connections — one-on-one or in groups.
+<br><br>
+                Immerse yourself in dynamic discussions and serendipitous encounters with attendees and speakers over a barista-brewed coffee or snack.</p>
+            </div>
+            <div class="col-md-12">
+                <div class="image-grid">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/6688679a73993a6c17926f7d_TED2024_20240415_1RL1751-medium.jpg" alt="TED Experience">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668867ad8e8952a0017dfe73_TED2024_20240416_1GT4109-medium.jpg" alt="TED Community">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668866a41f8ddc0f3968874e_TED2024_20240418_1JT5166-medium.jpg" alt="TED Theater">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Discovery Sessions">
+                  <img src="https://cdn.prod.website-files.com/62c883cadf99d50965b0e00f/668864cf22db7efe69380218_TED2024_20240419_2JR4177-medium.jpg" alt="Breaks for Connection">
+                </div>
+              </div>              
+          </div>
         </div>
       </div>
     </div>
   </main>
+  
 
 <!-- Footer -->
 <br><br><br><hr/>
