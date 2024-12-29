@@ -96,6 +96,50 @@
         background-color: #efefef; /* Highlighted background for active link */
         color: #000; /* Darker text for active link */
     }
+    .accordion-btn {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .accordion-btn i {
+     transition: transform 0.3s;
+    }
+
+    .accordion-btn.collapsed i {
+        transform: rotate(0deg);
+    }
+
+    .accordion-btn:not(.collapsed) i {
+        transform: rotate(180deg);
+    }
+
+    .list-group-item a {
+        font-size: 14px;
+    }
+
+    .collapse.show + .accordion-btn {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .accordion-btn.shrinked {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .accordion-link {
+        transition: background-color 0.3s;
+    }
+
+    .accordion-link.active {
+        background-color:#ddd ;/*  #f5c6cb; Mild pinkish shade */
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .bg-danger {
+        background-color: #f8f9fa !important; 
+    }
+
 </style>
 <body>
     <!-- Header Section -->
@@ -205,7 +249,7 @@
       </div>
 
       <!-- Mobile Dropdown -->
-      <div class="d-block d-md-none mb-2 fixed-bottom bg-light py-2">
+      <!-- <div class="d-block d-md-none mb-2 fixed-bottom bg-light py-2">
         <select class="form-select" onchange="location = this.value;">
           <option value="#">The Conference Experience</option>
           <option value="#simple-list-item-1">Your TED Experience</option>
@@ -214,8 +258,35 @@
           <option value="#simple-list-item-4">Discovery Sessions</option>
           <option value="#simple-list-item-5">Breaks for Connection</option>
         </select>
+      </div> -->
+      
+      <div class="d-block d-md-none mb-2 fixed-bottom bg-danger text-black py-2">
+        <button class="accordion-btn w-100 text-start text-black border-0 bg-danger py-2 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#accordionContent" aria-expanded="false" aria-controls="accordionContent">
+          <span>The Conference Experience</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="accordionContent" class="collapse">
+          <ul class="list-group bg-danger">
+            <li class="list-group-item bg-danger text-black border-0">
+              <a href="#simple-list-item-1" class="text-black text-decoration-none accordion-link">Your TED Experience</a>
+            </li>
+            <li class="list-group-item bg-danger text-black border-0">
+              <a href="#simple-list-item-2" class="text-black text-decoration-none accordion-link">Your community</a>
+            </li>
+            <li class="list-group-item bg-danger text-black border-0">
+              <a href="#simple-list-item-3" class="text-black text-decoration-none accordion-link">The TED theater</a>
+            </li>
+            <li class="list-group-item bg-danger text-black border-0">
+              <a href="#simple-list-item-4" class="text-black text-decoration-none accordion-link">Discovery Sessions</a>
+            </li>
+            <li class="list-group-item bg-danger text-black border-0">
+              <a href="#simple-list-item-5" class="text-black text-decoration-none accordion-link">Breaks for Connection</a>
+            </li>
+          </ul>
+        </div>
       </div>
-  
+      
+      
       <!-- Scrollable Content -->
       <div class="col-md-8">
         <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
@@ -365,8 +436,7 @@
             history.scrollRestoration = 'manual';
         }
         window.scrollTo(0, 0);
-    </script>
-    <script>
+
         function toggleNavbar() {
             const navbarList = document.getElementById('navbar-list');
             const toggleButton = document.querySelector('.toggle-navbar i');
@@ -381,7 +451,27 @@
                 toggleButton.classList.add('bi-chevron-up');
             }
         }
-    </script>
+        document.querySelectorAll('.accordion-link').forEach((link) => {
+            link.addEventListener('click', function () {
+                // Remove active class from all links and add it to the clicked one
+                document
+                .querySelectorAll('.accordion-link')
+                .forEach((el) => el.classList.remove('active'));
+                this.classList.add('active');
+
+                // Shrink the accordion button
+                const accordionBtn = document.querySelector('.accordion-btn');
+                accordionBtn.classList.add('shrinked');
+
+                // Close the expanded accordion
+                const accordionContent = document.getElementById('accordionContent');
+                const bsCollapse = new bootstrap.Collapse(accordionContent, {
+                toggle: true, // Ensure it toggles properly
+                });
+                bsCollapse.hide(); // Collapse the accordion
+            });
+        });
+</script>
 </body>
 
 </html>

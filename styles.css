@@ -130,9 +130,10 @@ header {
 .submenu {
     position: absolute;
     top: 100%;
-    left: 0;
+    text-align: left;
+    left: 12px; /*0*/
     background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.726);
     display: none;
     list-style: none;
     z-index: 1000;
@@ -140,6 +141,7 @@ header {
 
 .submenu.show {
     display: block; /* Show submenu when 'show' class is added */
+    background-color: #f9f9f9;
 }
 
 .submenu li {
@@ -197,7 +199,21 @@ header {
 .hamburger-menu.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
+/* Default styling for the menu */
+.submenu {
+    display: none; /* Hide submenus by default */
+}
 
+.submenu.show {
+    display: block; /* Show submenu when 'show' class is added */
+}
+
+/* Hover behavior for desktop view */
+@media (min-width: 768px) {
+    .menu li.dropdown:hover .submenu {
+        display: block; /* Show submenu on hover */
+    }
+}
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .menu {
@@ -221,6 +237,9 @@ header {
 
     .hamburger-menu {
         display: flex; /* Show hamburger menu on smaller screens */
+    }
+    .menu li.dropdown > a {
+        cursor: pointer; /* Show pointer to indicate clickability */
     }
 }
 
