@@ -182,6 +182,76 @@
             font-size: 1.7rem; 
         }
     }
+    .banner {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.banner h1 {
+    z-index: 2;
+    font-size: 3rem;
+    text-transform: uppercase;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: sentenceAnimation 3s ease-in-out infinite;
+    white-space: nowrap; /* Prevent breaking into multiple lines */
+}
+
+@keyframes sentenceAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .banner {
+        height: 40vh;
+    }
+}
+
 </style>
 <body>
     <!-- <div class="bg-animation">
@@ -268,52 +338,51 @@
     <main>
         <section id="donate" class="speaker-section">
             <div class="section-header">
-                <!-- <h2>BECOME A PARTNER...</h2> -->
                 <!-- Banner Section -->
                 <div class="banner">
-                    <div class="background-inner">
-                      <img src="https://cdn.prod.website-files.com/62c883cadf99d5331ab0dfe2/62c883cadf99d54767b0e06a_partner__cta-bg-p-2000.webp">
+                    <div class="video-background">
+                        <iframe 
+    src="https://player.vimeo.com/video/865693848?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" 
+    frameborder="0" 
+    allow="autoplay; fullscreen" 
+    allowfullscreen>
+</iframe>
+
                     </div>
                     <div class="overlay"></div>
-                    <h1>
-                      <span style="background-color: #e62b1e; color: white; padding: 10px">Become</span>
-                      <!-- <span class="sub-text">a</span>
-                      <span class="sub-text">TED</span> -->
-                      <span class="sub-text">a TED Partner</span>
-                    </h1>
-                  </div>
-                  
+                    <h1 class="animated-text"></h1>
+                </div>
                 <br>
                 <!-- Collaboration Section -->
                 <div class="collaboration-text" style="max-width: 950px; text-align: center; margin: auto; display: flex; justify-content: center; align-items: center; height: 50vh;">
                     <h2>Collaborating with industry-leading brands to craft <br>
-                    compelling and influential thought leadership advertising campaigns.</h2>
+                        compelling and influential thought leadership advertising campaigns.</h2>
                 </div>
-                
                 <!-- Three-Column Layout -->
-                <div class="columns" >
+                <div class="columns">
                     <div class="column">
-                    <h1 class="core-value">IMPACT.</h1>
-                    <div class="highlight">75%</div>
-                    <p>say TED has impacted their lives.</p>
-                    <p>We’re many things to many people: globally recognized storyteller, landmark events and conferences hub, and media powerhouse.</p>
+                        <h1 class="core-value">IMPACT.</h1>
+                        <div class="highlight">75%</div>
+                        <p>say TED has impacted their lives.</p>
+                        <p>We’re many things to many people: globally recognized storyteller, landmark events and conferences hub, and media powerhouse.</p>
                     </div>
                     <div class="column">
-                    <h1 class="core-value">TRUST.</h1>
-                    <div class="highlight">9/10</div>
-                    <p>view TED as a trusted brand.</p>
-                    <p>We uphold the highest editorial standards to continually earn our audience's trust and respect.</p>
+                        <h1 class="core-value">TRUST.</h1>
+                        <div class="highlight">9/10</div>
+                        <p>view TED as a trusted brand.</p>
+                        <p>We uphold the highest editorial standards to continually earn our audience's trust and respect.</p>
                     </div>
                     <div class="column">
-                    <h1 class="core-value">VALUE.</h1>
-                    <div class="highlight">2/3</div>
-                    <p>feel our partners share our values.</p>
-                    <p>Our value comes from a mission to share the best ideas from around the world.</p>
+                        <h1 class="core-value">VALUE.</h1>
+                        <div class="highlight">2/3</div>
+                        <p>feel our partners share our values.</p>
+                        <p>Our value comes from a mission to share the best ideas from around the world.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    
     <br><br><br><hr/>
     <div class="footer">
         <div class="contact-container">
@@ -342,6 +411,26 @@
             history.scrollRestoration = 'manual';
         }
         window.scrollTo(0, 0);
+        const sentences = [
+    "<span style='background-color: #e62b1e; color: white; padding: 5px;'>Share</span> a new mission",
+    "<span style='background-color: #e62b1e; color: white; padding: 5px;'>Reposition</span> your message",
+    "<span style='background-color: #e62b1e; color: white; padding: 5px;'>Capture</span> new insights",
+    "<span style='background-color: #e62b1e; color: white; padding: 5px;'>Rethink</span> complex problems"
+];
+
+const animatedText = document.querySelector('.animated-text');
+let sentenceIndex = 0;
+
+function changeSentence() {
+    animatedText.innerHTML = sentences[sentenceIndex];
+    sentenceIndex = (sentenceIndex + 1) % sentences.length;
+}
+
+// Start the animation and cycle sentences every 3 seconds
+changeSentence();
+setInterval(changeSentence, 3000);
+
+
     </script>
     
 </body>
