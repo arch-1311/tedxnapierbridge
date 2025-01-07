@@ -8,12 +8,139 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <title>TEDxNapierBridge</title>
+    <title>TEDxNapier Bridge</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
+<style>
+    .team-card {
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .team-card img {
+        width: 100%;
+        height: auto;
+    }
+    .team-card-body {
+        padding: 15px;
+    }
+    .team-card-body h5 {
+        margin-bottom: 5px;
+        font-size: 18px;
+    }
+    .team-social-icons a {
+        color: #007bff;
+        margin: 0 8px;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
+    .team-social-icons a:hover {
+        color: #0056b3;
+    }
+    .card-text a {
+        margin-right: 10px;
+        color: crimson; /* Default color */
+        font-size: 20px;
+        transition: color 0.3s;
+    }
+    
+    .card-text a:hover {
+        color: #0b0b0b; /* Hover color */
+    }
+    
+    .card-title {
+            margin-bottom: 5px;
+            font-size: 18px;
+            color:black;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .row > .col {
+        flex: 1 1 calc(25% - 10px); /* Default for 4 columns (25% width minus gap) */
+        max-width: calc(25% - 10px);
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 992px) {
+        .row > .col {
+            flex: 1 1 calc(33.333% - 10px); /* 3 columns for medium screens */
+            max-width: calc(33.333% - 10px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .row > .col {
+            flex: 1 1 calc(50% - 10px); /* 2 columns for small screens */
+            max-width: calc(50% - 10px);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .row > .col {
+            flex: 1 1 100%; /* Full width for extra-small screens */
+            max-width: 100%;
+        }
+    }
+/* Card Image */
+.card-img-top {
+    width: 220px; /* Adjust image size */
+    height: 220px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    margin: 0 auto 15px; /* Center the image and add spacing */
+    display: block;
+}
+
+/* Card Title */
+.card-title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+/* Card Designation */
+.card-designation {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Social Icons */
+.card-text a {
+    margin-right: 10px;
+    color: crimson; /* Default color */
+    font-size: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s;
+}
+
+.card-text a:hover {
+    color: #15365a; /* Hover color */
+}
+
+/* Row Styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center cards */
+}
+
+
+</style>
 <body>
     <!-- <div class="bg-animation">
         <div id="stars"></div>
@@ -96,40 +223,240 @@
         </div>
     </header>
         
-    <main style="max-width: 950px;">
+    <main style="margin-top: 2rem;">
         
 <!-- About us -->
-<section id="about" class="about-section">
-    <!-- Banner Section -->
-    <div class="about-banner">
-        <img src="images/team.jpg" alt="TEDxNapierBridge Team">
-    </div>
-
-    <!-- About Heading and Description -->
-    <div class="container">
+<!-- <section id="about" class="about-section"> -->
+    <!-- <div class="container py-5">
+        <h2 class="text-center mb-4">Meet Our Team</h2>
+        <div class="row g-4">
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="team-card">
+                    <img src="images/team/avatar-1.png" alt="Team Member">
+                    <div class="team-card-body">
+                        <h5>Jane Doe</h5>
+                        <p>Project Manager</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="team-card">
+                    <img src="images/team/avatar-2.png" alt="Team Member">
+                    <div class="team-card-body">
+                        <h5>John Smith</h5>
+                        <p>Developer</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="team-card">
+                    <img src="images/team/avatar-3.png" alt="Team Member">
+                    <div class="team-card-body">
+                        <h5>Jane Doe</h5>
+                        <p>Project Manager</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="team-card">
+                    <img src="images/team/avatar-4.png" alt="Team Member">
+                    <div class="team-card-body">
+                        <h5>John Smith</h5>
+                        <p>Developer</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="team-card">
+                    <img src="images/team/avatar-5.png" alt="Team Member">
+                    <div class="team-card-body">
+                        <h5>Jane Doe</h5>
+                        <p>Project Manager</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="team-card">
+                    <img src="images/team/avatar-1.png" alt="Team Member">
+                    <div class="team-card-body">
+                        <h5>John Smith</h5>
+                        <p>Developer</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <section id="about" class="about-section">
         <div class="section-header">
-            <h2>About TEDxNapierBridge</h2>
+            <h2>Meet Our Team</h2>
         </div>
-        <div class="about-description">
-            <p>TEDxNapierBridge is an independently organized TED event, designed to bring people together to share a TED-like experience. At TEDxNapierBridge events, TED Talks video and live speakers combine to spark deep discussion and connection in a small group. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.</p>
+        
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/team/avatar-1.png" alt="Card Image 1" class="card-img-top">
+                    
+                        <h5 class="card-title">Shyam Sundar</h5>
+                        <p class="card-designation">Organizer / Ambassador </p>
+                        <div class="card-text">
+                            <a href="https://facebook.com" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/team/avatar-2.png" alt="Card Image 2" class="card-img-top">
+                    
+                        <h5 class="card-title">Sanjeev Nivedan</h5>
+                        <p class="card-designation">Co-organizer</p>
+                        <div class="card-text">
+                            <a href="https://facebook.com" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/team/avatar-3.png" alt="Card Image 2" class="card-img-top">
+                    
+                        <h5 class="card-title">Nanmadhi Ramadoss</h5>
+                        <p class="card-designation">Co-organizer</p>
+                        <div class="card-text">
+                            <a href="https://facebook.com" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/team/avatar-4.png" alt="Card Image 2" class="card-img-top">
+                    
+                        <h5 class="card-title">Jayalakshmi Krishnan</h5>
+                        <p class="card-designation">Co-organizer</p>
+                        <div class="card-text">
+                            <a href="https://facebook.com" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/team/avatar-5.png" alt="Card Image 2" class="card-img-top">
+                   
+                        <h5 class="card-title">Madhu Ramakrishnan</h5>
+                        <p class="card-designation">Co-organizer</p>
+                        <div class="card-text">
+                            <a href="https://facebook.com" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/team/avatar-7.png" alt="Card Image 2" class="card-img-top">
+                    
+                        <h5 class="card-title">Jude Sannith</h5>
+                        <p class="card-designation">Co-organizer</p>
+                        <div class="card-text">
+                            <a href="https://facebook.com" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Three Column Section -->
-        <div class="about-subcontent">
-            <div class="about-vision">
-                <h3>Our Vision</h3>
-                <p>TEDxNapierBridge envisions a community where passionate individuals, driven by ideas and creativity, come together to inspire change, ignite conversations, and foster innovation. Through our platform, we aim to showcase the best of human ingenuity, celebrate diverse voices, and spark transformative ideas that resonate with the local and global community.</p>
-            </div>
-            <div class="about-mission">
-                <h3>Our Mission</h3>
-                <p>Our mission is to curate events that serve as a catalyst for change, creativity, and innovation. By providing a stage for compelling stories, groundbreaking ideas, and thought-provoking discussions, we aim to empower individuals to take action and make a positive impact on society.</p>
-            </div>
-            <div class="about-ideas">
-                <h3>Our Ideas</h3>
-                <p>We showcase the best of human ingenuity, celebrate diverse voices, and spark transformative ideas that resonate with the local and global community.</p>
-            </div>
-        </div>
-    </div>
+        
+        
 </section>
     </main>
     <br><br><br><hr/>
@@ -153,7 +480,8 @@
         <br/>
     </div>
 
-   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="scripts.js"></script>
     <script>
         if ('scrollRestoration' in history) {
