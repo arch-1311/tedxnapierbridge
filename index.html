@@ -46,13 +46,29 @@
         display: inline-block;
         white-space: nowrap;
     }
+    .highlight {
+    color: inherit; /* Use default text color */
+    font-weight: bold;
+}
+
+.roman-numeral {
+    color: black !important; /* Red color for the Roman numeral */
+    font-size: 1.2em; /* Optional size adjustment */
+}
 
 .typing {
     border-right: 5px solid rgb(255, 253, 253); /* Typing cursor */
     padding-right: 5px;
     animation: typing 1s steps(20) 1, blink 0.5s step-end infinite; /* Increased typing speed */
 }
-
+.elfsight-app {
+    max-width: 900px;
+    text-align: center;
+    background: #fff; /* Optional background */
+    padding: 20px; /* Optional padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+    border-radius: 8px; /* Optional rounded corners */
+}
 @keyframes typing {
     from {
         width: 0;
@@ -104,21 +120,7 @@
         background-color: rgba(0, 0, 0, 0.75); 
         z-index: 0; /* Ensure it appears on top of the iframe */
     }
-/* 
-
-        @keyframes slideText {
-            0%, 20% { transform: translateY(0); opacity: 1; }
-            25%, 45% { transform: translateY(-100%); opacity: 1; }
-            50%, 70% { transform: translateY(-200%); opacity: 1; }
-            75%, 95% { transform: translateY(-300%); opacity: 1; }
-        }
-
-
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        } */
-        @media (max-width: 768px) {
+    @media (max-width: 768px) {
           .text-container h1 {
             font-size: 2rem;
           }
@@ -216,7 +218,7 @@
             .banner-section {
             flex-direction: column;
             text-align: center;
-            padding: 50px;
+            padding: 30px;
             }
 
             .banner-left,
@@ -235,28 +237,28 @@
             }
         }
 
-         /* Parallax Background */
-  .parallax-bg {
-    /* background: url('images/newsletter-background.jpg') no-repeat center center fixed; */
-    background-size: cover;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    transform: translateZ(-1px) scale(2); /* Parallax effect */
-  }
+    .parallax {
+      /* The image used */
+      background-image: url("images/newsletter-background.jpg");
 
+      /* Set a specific height */
+      min-height: 200px; 
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   .instagram-section {
     position: relative;
-    height: 70vh;
+    height: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: white;
+    background-color: #ddd;
   }
 
   .instagram-content {
@@ -305,11 +307,14 @@
     }
 
     .instagram-grid {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
       gap: 10px;
     }
     .instagram-section {
-        height: 30vh;
+        height: 25vh;
+    }
+    .parallax {
+      min-height: 100px;
     }
   }
     </style>
@@ -444,12 +449,15 @@
         </div>
     </section> -->
     <div class="banner-section">
-        <div class="banner-left" style="text-align: left;">
-          <h1><span>TEDxNapier Bridge</span> TURNS <span>TEN</span></h1>
-          <!-- <div class="banner-deco">
-            <span>•</span><span>•</span><span>•</span><span>•</span>
-          </div> -->
-        </div>
+      <div class="banner-left" style="text-align: left;">
+        <h1>
+            <span class="highlight">TEDxNapier Bridge</span> 
+            TURNS 
+            <!-- TEN &#8553; -->
+        </h1>   
+        <img src="images/10gg.gif" alt="Celebrating 10 Years" style="width: 50px; height: 50px;">               
+    </div>
+
         <div class="banner-right">
           <p>
             Celebrate with us 10 years of connecting Chennai’s communities and fostering growth. 
@@ -458,75 +466,34 @@
           </p>
         </div>
       </div>
-      
-      <div class="instagram-section mt-5">
-       <!-- <div class="parallax-bg"></div>-->
+      <div class="parallax"></div>
+
+      <div class="instagram-section">
         <div class="instagram-content">
           <h2>Instagram Feed</h2>
           <div class="instagram-grid">
-            <!-- Replace these with your Instagram posts and reel links -->
             <a href="https://www.instagram.com/p/DCg1a7WSJnT/" target="_blank" class="insta-item">
-              <img src="images/insta-post1.png" alt="Post 1">
+              <img src="images/insta-post5.png" alt="Post 1">
             </a>
             <a href="https://www.instagram.com/p/DCMSxqnyCt4/?img_index=1" target="_blank" class="insta-item">
               <img src="images/insta-post5.png" alt="Post 2">
             </a>
             <a href="https://www.instagram.com/p/DCHQxGLSoV3/?img_index=1" target="_blank" class="insta-item">
-              <img src="images/insta-post1.png" alt="Post 3">
+              <img src="images/insta-post5.png" alt="Post 3">
             </a>
             <a href="https://www.instagram.com/p/DAVyS8YNrTs/?img_index=1" target="_blank" class="insta-item">
               <img src="images/insta-post5.png" alt="Post 4">
             </a>
             <a href="https://www.instagram.com/p/C_A1h5vNDS7/?img_index=1" target="_blank" class="insta-item">
-              <img src="images/insta-post1.png" alt="Post 5">
-            </a>
-            <a href="https://www.instagram.com/p/C4se6m2oCka/?img_index=1" target="_blank" class="insta-item">
-              <img src="images/insta-post5.png" alt="Post 6">
+              <img src="images/insta-post5.png" alt="Post 5">
             </a>
           </div>
         </div>
-      </div>
-      
-    <!-- <section id="partners" class="partner-section">
-        <div class="section-header">
-            <h2>Partners of our TEDxNapier Bridge TruthCon | Apr 2024</h2>
-        </div>
-        <div class="partners-container">
-            <div class="partner-marquee">
-                <a href="https://www.paperkaite.com/"><img src="images/logo1.png" alt="Partner 1"></a>
-                <a href="https://ecoindian.com/"><img src="images/logo2.png" alt="Partner 2"></a>
-                <a href="https://www.thefuturewall.com/"><img src="images/logo3.png" alt="Partner 3"></a>
-                <a href="#"><img src="images/logo4.png" alt="Partner 4"></a>
-                <a href="#"><img src="images/logo5.png" alt="Partner 5"></a>
-            </div>
-        </div>
-    </section> -->
-    
-    <!-- <section id="partners" class="partners">
-        <div class="container">
-            <h2 class="section-title">Our Partners</h2>
-            <div class="partner-category main-partners">
-                <h3>Main Partners</h3>
-                <div class="partner-logos">
-                    <img src="images/logo1.png" alt="Partner 1" class="partner-logo">
-                    <img src="images/logo2.png" alt="Partner 2" class="partner-logo">
-                     Add more logos as needed
-                </div>
-            </div>
-            <div class="partner-category media-partners">
-                <h3>Media Partners</h3>
-                <div class="partner-logos">
-                    <img src="logo3.png" alt="Partner 3" class="partner-logo">
-                    <img src="logo4.png" alt="Partner 4" class="partner-logo">
-                     Add more logos as needed
-                </div>
-            </div>
-             Add more categories as needed 
-        </div>
+      </div> 
+      <!-- <div class="elfsight-app-8a013134-a532-4e67-ae5f-de7ac61202e5" data-elfsight-app-lazy></div> -->
+      <div class="parallax"></div>
 
-    </section> -->
-    
-    
+      <!-- <div class="elfsight-app-8a013134-a532-4e67-ae5f-de7ac61202e5" data-elfsight-app-lazy></div> -->
     
 </main>
     <br><br><br><hr/>
@@ -550,7 +517,8 @@
         <br/>
     </div>
 
-   
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
     <script src="scripts.js"></script>
     <script>
         // Define the lines for the typewriter
