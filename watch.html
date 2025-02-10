@@ -9,7 +9,7 @@
  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-     <title>TEDxNapierBridge</title>
+     <title>TEDxNapier Bridge</title>
      <link rel="stylesheet" href="styles.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
@@ -155,127 +155,509 @@
     <div class="section-header">
         <h2>Talks</h2>
     </div>
-    <div class="talks-intro">
+    <!-- <div class="talks-intro">
         <div><span style="font-style: italic;color: red;">TEDxNapierBridge </span>has been dedicated to spreading innovative and thought-provoking ideas through short, powerful talks since its inception in 2015.TEDxNapierBridge talks have covered a wide range of topics, from technology and entrepreneurship to art and social impact. The event has featured a diverse range of speakers, including entrepreneurs, artists, activists, and thought leaders, who have shared their unique perspectives and experiences.<br/><br/>These talks have not only inspired thousands of people in Chennai but have also played a significant role in shaping local conversations and driving positive change in the community. Whether you're looking to explore new ideas, challenge your perspectives, or simply be inspired, TEDxNapierBridge talks have something to offer everyone.</div>
-    </div>
+    </div> -->
 
 <div class="filter-section">
     <label for="type">Type:</label>
     <select id="type" onchange="filterTalks()">
         <option value="">All</option>
-        <option value="Talks">Talks</option>
+        <option value="Talk">Talk</option>
         <option value="Performance">Performance</option>
     </select>
 
     <label for="category">Category:</label>
     <select id="category" onchange="filterTalks()">
         <option value="">All</option>
+        <option value="Activism">Activism</option>
+        <option value="AI">AI</option>
+        <option value="Animals">Animals</option>
+        <option value="Architecture">Architecture</option>
         <option value="Art">Art</option>
+        <option value="Business">Business</option>
+        <option value="Change">Change</option>
+        <option value="Childhood">Childhood</option>
+        <option value="Children">Children</option>
+        <option value="Cities">Cities</option>
+        <option value="Climate Change">Climate Change</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Conservation">Conservation</option>
+        <option value="Dance">Dance</option>
+        <option value="Death">Death</option>
+        <option value="Design">Design</option>
+        <option value="Education">Education</option>
+        <option value="Education Reform">Education Reform</option>
+        <option value="Energy">Energy</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Entrepreneurship">Entrepreneurship</option>
+        <option value="Environment">Environment</option>
+        <option value="Exploration">Exploration</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Feminism">Feminism</option>
+        <option value="Forest">Forest</option>
+        <option value="Gender">Gender</option>
+        <option value="Health">Health</option>
+        <option value="History">History</option>
+        <option value="Identity">Identity</option>
+        <option value="Ideas">Ideas</option>
+        <option value="Internet">Internet</option>
+        <option value="Journalism">Journalism</option>
+        <option value="Language">Language</option>
+        <option value="Law">Law</option>
+        <option value="Life">Life</option>
+        <option value="Local Issues">Local Issues</option>
+        <option value="Math">Math</option>
+        <option value="Media">Media</option>
+        <option value="Medicine">Medicine</option>
         <option value="Music">Music</option>
-        <option value="Cinema">Cinema</option>
-        <option value="Clock">Clock</option>
-        <option value="Environment">Environment</option>        
-        <option value="Environment">Social</option>
+        <option value="News">News</option>
+        <option value="Oceans">Oceans</option>
+        <option value="Parenting">Parenting</option>
+        <option value="Performance">Performance</option>
+        <option value="Photography">Photography</option>
+        <option value="Plants">Plants</option>
+        <option value="Plastic">Plastic</option>
+        <option value="Psychology">Psychology</option>
+        <option value="Rebuilding">Rebuilding</option>
+        <option value="Recycling">Recycling</option>
+        <option value="Recovery">Recovery</option>
+        <option value="Science">Science</option>
+        <option value="Sex">Sex</option>
+        <option value="Social Change">Social Change</option>
+        <option value="Social Interaction">Social Interaction</option>
+        <option value="Society">Society</option>
+        <option value="Sound">Sound</option>
+        <option value="Space">Space</option>
+        <option value="Storytelling">Storytelling</option>
+        <option value="Teaching">Teaching</option>
+        <option value="Technology">Technology</option>
+        <option value="Visualization">Visualization</option>
+        <option value="Water">Water</option>
+        <option value="Women">Women</option>
+        <option value="Women's Rights">Women's Rights</option>
+        <option value="Youth">Youth</option>
     </select>
 
     <label for="year-select">Year:</label> 
     <select id="year-select" onchange="filterTalks()">
         <option value="">All</option>
+        <option value="2023">2024</option>
         <option value="2023">2023</option>
         <option value="2019">2019</option>
         <option value="2018">2018</option>
+        <option value="2018">2017</option>
     </select>
 
     <label for="event-select">Event:</label>
     <select id="event-select" onchange="filterTalks()">
         <option value="">All</option>
-        <option value="Think, become">Think, become</option>
+        <!-- <option value="Think, become">Think, become</option>
         <option value="Please Turn Over">Please Turn Over</option>
-        <option value="Turning Vision Into Reality">Turning Vision Into Reality</option>
+        <option value="Turning Vision Into Reality">Turning Vision Into Reality</option> -->
+        <option value="Women">Women</option>
+        <option value="Standard">Standard</option>
+        <option value="Salon">Salon</option>
     </select>
 </div>
 
 <div id="talks" style="display: flex; flex-wrap: wrap; gap: 10px;">
     <!-- Talk 1 -->
-    <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
-        <a href="talks/filmmaking.html" class="talk-info" style="text-decoration: none; color: inherit;">
+    <div class="talk-item" data-type="Talk" data-category="Feminism Music" data-year="2017" data-event="Women">
+        <a href="talks/giving-up-dreams.html" class="talk-info" style="text-decoration: none; color: inherit;">
             <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/H6WshAeXlNY/0.jpg" alt="Filmmaking will always remain a labor of love" class="thumbnail">
+                <img src="https://img.youtube.com/vi/SFWiG7bpYOQ/maxresdefault.jpg" alt="Giving up dream for others dreams" class="thumbnail">
             </div>
             <div class="talk-info">
-                <h6><em>Talks</em></h6>
-                <h3>Filmmaking will always remain a labor of love</h3>
-                <p>Gautham Vasudev Menon</p>
+                <h6><em>Talk</em></h6>
+                <h3>Giving up dream for others dreams</h3>
+                <p>Shakthisree Gopalan</p>
             </div>
         </a>
-    </div>    
-    
+    </div>
+
     <!-- Talk 2 -->
-    <!-- <div class="talk-item" data-type="Talks" data-category="Clock" data-year="2023" data-event="Think, become">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/845-o5iEilY/0.jpg" alt="Clocks are great storytellers if we simply listen" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/845-o5iEilY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="talk-info">
-            <h6><em>Talks</em></h6>
-            <h3>Clocks are great storytellers if we simply listen</h3>
-            <p>Robert Kennedy</p>
-        </div>
-    </div> -->
-    <div class="talk-item" data-type="Talks" data-category="Technology" data-year="2023" data-event="Think, become">
-        <a href="talks/filmmaking.html" class="talk-info" style="text-decoration: none; color: inherit;">
+    <div class="talk-item" data-type="Talk" data-category="Feminism" data-year="2017" data-event="Women">
+        <a href="talks/dancing-body-change.html" class="talk-info" style="text-decoration: none; color: inherit;">
             <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/845-o5iEilY/0.jpg" alt="Clocks are great storytellers if we simply listen" class="thumbnail">
+                <img src="https://img.youtube.com/vi/uxURpApOfVo/maxresdefault.jpg" alt="Our Dancing body as a canvas for Change" class="thumbnail">
             </div>
             <div class="talk-info">
-                <h6><em>Talks</em></h6>
+                <h6><em>Talk</em></h6>
+                <h3>Our Dancing body as a canvas for Change</h3>
+                <p>Aarabi Veeraraghavan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 3 -->
+    <div class="talk-item" data-type="Talk" data-category="Gender Sex" data-year="2017" data-event="Women">
+        <a href="talks/gender-dysphoria.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/rs2Z2O-OgdA/maxresdefault.jpg" alt="Coming to terms with gender dysphoria" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Coming to terms with gender dysphoria</h3>
+                <p>Anannya Krishnan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 4 -->
+    <div class="talk-item" data-type="Talk" data-category="Change Social Change Society" data-year="2018" data-event="Standard">
+        <a href="talks/caste-free-society.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/gvNJJqNc6gw/maxresdefault.jpg" alt="A vision for a caste-free society" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>A vision for a caste-free society</h3>
+                <p>Kausalya Shankar</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 5 -->
+    <div class="talk-item" data-type="Talk" data-category="Art Ideas Visualization" data-year="2018" data-event="Standard">
+        <a href="talks/magic-of-small-ideas.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/0GBec6XKIFc/maxresdefault.jpg" alt="The magic of small ideas" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The magic of small ideas</h3>
+                <p>Bharadwaj Sundar</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 6 -->
+    <div class="talk-item" data-type="Talk" data-category="Music Sound" data-year="2018" data-event="Standard">
+        <a href="talks/journey-of-music.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/wcjcfwFKnnM/maxresdefault.jpg" alt="The journey of music in the Indian cinema" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The journey of music in the Indian cinema</h3>
+                <p>Santhosh Narayanan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 7 -->
+    <div class="talk-item" data-type="Talk" data-category="Animals Photography" data-year="2018" data-event="Standard">
+        <a href="talks/wildlife-photography.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/_5dzZqi9yWs/maxresdefault.jpg" alt="There's more to wildlife photography than aesthetic" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>There's more to wildlife photography than aesthetic</h3>
+                <p>Prakash Ramakrishnan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 8 -->
+    <div class="talk-item" data-type="Talk" data-category="Journalism" data-year="2018" data-event="Standard">
+        <a href="talks/diversity-in-newsrooms.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/gujpMicIAs8/maxresdefault.jpg" alt="Diversity in newsrooms leads to better journalism" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Diversity in newsrooms leads to better journalism</h3>
+                <p>Dhanya Rajendran</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 9 -->
+    <div class="talk-item" data-type="Talk" data-category="Architecture Cities Design" data-year="2018" data-event="Standard">
+        <a href="talks/smart-cities.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/rgS6WaLcT8Y/maxresdefault.jpg" alt="Envisioning smart cities, and what it takes to get there" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Envisioning smart cities, and what it takes to get there</h3>
+                <p>Raj Cherubal</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 10 -->
+    <div class="talk-item" data-type="Talk" data-category="Art History" data-year="2018" data-event="Standard">
+        <a href="talks/clocks-as-storytellers.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/845-o5iEilY/maxresdefault.jpg" alt="Clocks are great storytellers if we simply listen" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
                 <h3>Clocks are great storytellers if we simply listen</h3>
                 <p>Robert Kennedy</p>
             </div>
         </a>
     </div>
-    
-    <!-- Talk 3 -->
-    <!-- <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/XTXlYpwBQ8c/0.jpg" alt="Art is more than just a visual stimulant" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/XTXlYpwBQ8c?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="talk-info">
-            <h6><em>Talks</em></h6>
-            <h3>Art is more than just a visual stimulant</h3>
-            <p>Krishnapriya CP</p>
-        </div>
-    </div> -->
-    <div class="talk-item" data-type="Talks" data-category="Art" data-year="2023" data-event="Think, become">
-        <a href="talks/art-is-more-than-just-a-visual-stimulant.html" class="talk-info" style="text-decoration: none; color: inherit;">
+
+    <!-- Talk 11 -->
+    <div class="talk-item" data-type="Talk" data-category="Art Education Design" data-year="2018" data-event="Standard">
+        <a href="talks/art-beyond-visual.html" class="talk-info" style="text-decoration: none; color: inherit;">
             <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/XTXlYpwBQ8c/0.jpg" alt="Art is more than just a visual stimulant" class="thumbnail">
+                <img src="https://img.youtube.com/vi/XTXlYpwBQ8c/maxresdefault.jpg" alt="Art is more than just a visual stimulant" class="thumbnail">
             </div>
             <div class="talk-info">
-                <h6><em>Talks</em></h6>
+                <h6><em>Talk</em></h6>
                 <h3>Art is more than just a visual stimulant</h3>
                 <p>Krishnapriya CP</p>
             </div>
         </a>
     </div>
-    
-    <!-- Talk 4 -->
-    <!-- <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/HzJU7UTCTgg/0.jpg" alt="Sounds of Parai" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/HzJU7UTCTgg?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="talk-info">
-            <h6><em>Performance</em></h6>
-            <h3>Sounds of Parai</h3>
-            <p>Aazhi Kalaikuviyam</p>
-        </div>
-    </div> -->
-    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
+
+    <!-- Performance 12 -->
+    <div class="talk-item" data-type="Performance" data-category="Music Performance" data-year="2018" data-event="Standard">
+        <a href="talks/veena-performance.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/jwta_XqpCEQ/maxresdefault.jpg" alt="Shifting the note: a Veena performance" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Performance</em></h6>
+                <h3>Shifting the note: a Veena performance</h3>
+                <p>Madhu Ramakrishnan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 13 -->
+    <div class="talk-item" data-type="Talk" data-category="Art Entertainment Life" data-year="2019" data-event="Standard">
+        <a href="talks/filmmaking-labor-of-love.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/H6WshAeXlNY/maxresdefault.jpg" alt="Filmmaking will always remain a labor of love" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Filmmaking will always remain a labor of love</h3>
+                <p>Gautham Vasudev Menon</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 14 -->
+    <div class="talk-item" data-type="Talk" data-category="Architecture Cities Conservation Design Society" data-year="2019" data-event="Standard">
+        <a href="talks/conserving-buildings.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/0DYlw4JREcs/maxresdefault.jpg" alt="Conserving buildings and the beyond" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Conserving buildings and the beyond</h3>
+                <p>Kalpana K</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 15 -->
+    <div class="talk-item" data-type="Talk" data-category="Death History Photography Society" data-year="2019" data-event="Standard">
+        <a href="talks/irony-of-caste.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/1U0fk2zlDxs/maxresdefault.jpg" alt="The irony of caste in the face of death" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The irony of caste in the face of death</h3>
+                <p>Arun Vijai Mathavan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 16 -->
+    <div class="talk-item" data-type="Talk" data-category="Conservation Environment History Water" data-year="2019" data-event="Standard">
+        <a href="talks/historical-river-cooum.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/YB6KMPBvQ4o/maxresdefault.jpg" alt="The Historical Significance of River Cooum" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The Historical Significance of River Cooum</h3>
+                <p>Venkatesh Ramakrishnan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 17 -->
+    <div class="talk-item" data-type="Talk" data-category="AI Education Education reform Teaching Technology" data-year="2019" data-event="Standard">
+        <a href="talks/ai-in-middle-school.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/YpLeIkpqLi4/maxresdefault.jpg" alt="Why Artificial Intelligence Should Be Taught in Middle School" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Why Artificial Intelligence Should Be Taught in Middle School</h3>
+                <p>Suriya Prabha</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 18 -->
+    <div class="talk-item" data-type="Talk" data-category="Education Life Sex" data-year="2019" data-event="Standard">
+        <a href="talks/elephant-in-bedroom.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/PlpJ0kPwbTY/maxresdefault.jpg" alt="The Elephant in the Bedroom" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The Elephant in the Bedroom</h3>
+                <p>Pallavi Barnwal</p>
+            </div>
+        </a>
+    </div>
+    <!-- Talk 19 -->
+    <div class="talk-item" data-type="Talk" data-category="Environment Plastic Social Change" data-year="2019" data-event="Standard">
+        <a href="talks/false-solutions-environment.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/dyeuwu-G1T0/maxresdefault.jpg" alt="How false solutions are a detriment to the environment" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>How false solutions are a detriment to the environment</h3>
+                <p>Nityanand Jayaraman</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 20 -->
+    <div class="talk-item" data-type="Talk" data-category="AI Medicine Technology" data-year="2019" data-event="Standard">
+        <a href="talks/ai-medical-care.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/Z89f1QuRq10/maxresdefault.jpg" alt="How AI Can Improve Medical Care for Those Who Can't Afford It" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>How AI Can Improve Medical Care for Those Who Can't Afford It</h3>
+                <p>Dr. Kim Ramasamy</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Performance 21 -->
+    <div class="talk-item" data-type="Performance" data-category="Feminism Music" data-year="2019" data-event="Women">
+        <a href="talks/music-language-of-stories.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/9zN6CFRP-9A/maxresdefault.jpg" alt="Music, the language of stories, and the rhythm of the soul" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Performance</em></h6>
+                <h3>Music, the language of stories, and the rhythm of the soul</h3>
+                <p>The Spasht</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Performance 22 -->
+    <div class="talk-item" data-type="Performance" data-category="Dance Music" data-year="2019" data-event="Women">
+        <a href="talks/dynamism-of-dance.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/I71pdU5ub_0/maxresdefault.jpg" alt="Exploring creative expression through the dynamism of dance" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Performance</em></h6>
+                <h3>Exploring creative expression through the dynamism of dance</h3>
+                <p>Team Anartana</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 23 -->
+    <div class="talk-item" data-type="Talk" data-category="Animals Change Society" data-year="2019" data-event="Women">
+        <a href="talks/dialogue-with-animals.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/KLot7DmLKMo/maxresdefault.jpg" alt="The fascinating dialogue that animals want to have with us" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The fascinating dialogue that animals want to have with us</h3>
+                <p>Sindhoor Pangal</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 24 -->
+    <div class="talk-item" data-type="Talk" data-category="Identity Rebuilding Recovery Society" data-year="2019" data-event="Women">
+        <a href="talks/love-the-woman-mirror.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/o1-chP-ZUBY/maxresdefault.jpg" alt="Learning to identify and love the woman in the mirror" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Learning to identify and love the woman in the mirror</h3>
+                <p>Anjali Rajgopal</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 25 -->
+    <div class="talk-item" data-type="Talk" data-category="Childhood Children Parenting Social Change Society Women" data-year="2019" data-event="Women">
+        <a href="talks/active-parents-collective.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/krt05Ay7xHA/maxresdefault.jpg" alt="Why we need to raise a collective of active parents" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Why we need to raise a collective of active parents</h3>
+                <p>Vaishali BK</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 26 -->
+    <div class="talk-item" data-type="Talk" data-category="Feminism Health Women Women's Rights" data-year="2019" data-event="Women">
+        <a href="talks/womens-health-blindspots.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/r6jlgUs-boc/maxresdefault.jpg" alt="Women's health: Turning a spotlight on the blindspots" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Women's health: Turning a spotlight on the blindspots</h3>
+                <p>Nayantara Narayanan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 27 -->
+    <div class="talk-item" data-type="Talk" data-category="Entrepreneurship Environment Exploration Math Science Space" data-year="2019" data-event="Women">
+        <a href="talks/importance-of-neutrinos.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/jk_iMlIgAUc/maxresdefault.jpg" alt="Why do we need to care about Neutrinos" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Why do we need to care about Neutrinos</h3>
+                <p>Indumathi D</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 28 -->
+    <div class="talk-item" data-type="Talk" data-category="Activism Art Change Entertainment Feminism Women" data-year="2019" data-event="Women">
+        <a href="talks/women-in-cinema.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/placeholder.jpg" alt="Restructuring the narrative and portrayal of women in cinema" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Restructuring the narrative and portrayal of women in cinema</h3>
+                <p>Uma Vangal</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Performance 29 -->
+    <div class="talk-item" data-type="Performance" data-category="Activism Music" data-year="2023" data-event="Standard">
         <a href="talks/sounds-of-parai.html" class="talk-info" style="text-decoration: none; color: inherit;">
             <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/HzJU7UTCTgg/0.jpg" alt="Sounds of Parai" class="thumbnail">
+                <img src="https://img.youtube.com/vi/HzJU7UTCTgg/maxresdefault.jpg" alt="Sounds of Parai" class="thumbnail">
             </div>
             <div class="talk-info">
                 <h6><em>Performance</em></h6>
@@ -284,108 +666,203 @@
             </div>
         </a>
     </div>
-    
-    <!-- Talk 5 -->
-    <!-- <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/jwta_XqpCEQ/0.jpg" alt="Talk 5" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/jwta_XqpCEQ?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="talk-info">
-            <h6><em>Performance</em></h6>
-            <h3>Shifting the note : a Veena performance</h3>
-            <p>Madhu Ramakrishnan</p>
-        </div>
-    </div> -->
-    <div class="talk-item" data-type="Performance" data-category="Music" data-year="2019" data-event="Please Turn Over">
-        <a href="talks/shifting-the-note-a-veena-performance.html" class="talk-info" style="text-decoration: none; color: inherit;">
+
+    <!-- Performance 30 -->
+    <div class="talk-item" data-type="Performance" data-category="Climate Change Comedy" data-year="2023" data-event="Standard">
+        <a href="talks/out-of-time.html" target="_blank" class="talk-info" style="text-decoration: none; color: inherit;">
             <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/jwta_XqpCEQ/0.jpg" alt="Talk 5" class="thumbnail">
+                <img src="https://img.youtube.com/vi/bvvgyonyv7M/maxresdefault.jpg" alt="Out of Time" class="thumbnail">
             </div>
             <div class="talk-info">
                 <h6><em>Performance</em></h6>
-                <h3>Shifting the note : a Veena performance</h3>
-                <p>Madhu Ramakrishnan</p>
+                <h3>Out of Time</h3>
+                <p>Burrito Bowl Productions</p>
             </div>
         </a>
     </div>
-    
-    <!-- Talk 6 -->
-    <!-- <div class="talk-item" data-type="Talks" data-category="Environment" data-year="2019" data-event="Please Turn Over">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/dyeuwu-G1T0/0.jpg" alt="Talk 6" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/dyeuwu-G1T0?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="talk-info">
-            <h6><em>Talks</em></h6>
-            <h3>How false solutions are a detriment to the environment</h3>
-            <p>Nityanand Jayaraman</p>
-        </div>
-    </div> -->
-    <div class="talk-item" data-type="Talks" data-category="Environment" data-year="2019" data-event="Please Turn Over">
-        <a href="talks/how-false-solutions-are-a-detriment-to-the-environment.html" class="talk-info" style="text-decoration: none; color: inherit;">
-            <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/dyeuwu-G1T0/0.jpg" alt="Talk 6" class="thumbnail">
-            </div>
-            <div class="talk-info">
-                <h6><em>Talks</em></h6>
-                <h3>How false solutions are a detriment to the environment</h3>
-                <p>Nityanand Jayaraman</p>
-            </div>
-        </a>
-    </div>
-    
-    <!-- Talk 7 -->
-    <!-- <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/ftT3tL-eLuw/0.jpg" alt="Talk 7" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/ftT3tL-eLuw?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="talk-info">
-            <h6><em>Talks</em></h6>
-            <h3>The questions that we ought to ask </h3>
-            <p> Dr. Shalini N & Shyam Sundar </p>
-        </div>
-    </div> -->
-    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
-        <a href="talks/the-questions-that-we-ought-to-ask.html" class="talk-info" style="text-decoration: none; color: inherit;">
-            <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/ftT3tL-eLuw/0.jpg" alt="Talk 7" class="thumbnail">
-            </div>
-            <div class="talk-info">
-                <h6><em>Talks</em></h6>
-                <h3>The questions that we ought to ask</h3>
-                <p>Dr. Shalini N & Shyam Sundar</p>
-            </div>
-        </a>
-    </div>
-    
 
-    <!-- Talk 8 -->
-    <!-- <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
-        <div class="video-wrapper">
-            <img src="https://img.youtube.com/vi/1U0fk2zlDxs/0.jpg" alt="Talk 8" class="thumbnail" onclick="playVideo(this)">
-            <iframe src="https://www.youtube.com/embed/1U0fk2zlDxs?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="talk-info">
-            <h6><em>Talks</em></h6>
-            <h3>The irony of caste in the face of death</h3>
-            <p>Arun Vijai Mathavan</p>
-        </div>
-    </div>     -->
-    <div class="talk-item" data-type="Talks" data-category="Social" data-year="2018" data-event="Turning Vision Into Reality">
-        <a href="talks/the-irony-of-caste-in-the-face-of-death.html" class="talk-info" style="text-decoration: none; color: inherit;">
+    <!-- Talk 31 -->
+    <div class="talk-item" data-type="Talk" data-category="Climate Change Fashion Recycling" data-year="2023" data-event="Standard">
+        <a href="talks/sustainable-fashion.html" class="talk-info" style="text-decoration: none; color: inherit;">
             <div class="video-wrapper">
-                <img src="https://img.youtube.com/vi/1U0fk2zlDxs/0.jpg" alt="Talk 8" class="thumbnail">
+                <img src="https://img.youtube.com/vi/MHKOorT20oE/maxresdefault.jpg" alt="Thoughts on Sustainable Fashion" class="thumbnail">
             </div>
             <div class="talk-info">
-                <h6><em>Talks</em></h6>
-                <h3>The irony of caste in the face of death</h3>
-                <p>Arun Vijai Mathavan</p>
+                <h6><em>Talk</em></h6>
+                <h3>Thoughts on Sustainable Fashion</h3>
+                <p>Ashwin Thiyagarajan & Reethu Paramasivam</p>
             </div>
         </a>
     </div>
-    
+
+    <!-- Talk 32 -->
+    <div class="talk-item" data-type="Talk" data-category="Architecture Climate Change" data-year="2023" data-event="Standard">
+        <a href="talks/green-construction-playbook.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/By9t7x-Wldk/maxresdefault.jpg" alt="The Green Construction Playbook" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The Green Construction Playbook</h3>
+                <p>Anupama Bothireddy & Aafreen Fathima Kabir</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 33 -->
+    <div class="talk-item" data-type="Talk" data-category="Climate Change Education Youth" data-year="2023" data-event="Standard">
+        <a href="talks/shaping-young-minds.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/RtMp7yFouMg/maxresdefault.jpg" alt="Why is shaping young minds a game-changer in the climate crisis?" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Why is shaping young minds a game-changer in the climate crisis?</h3>
+                <p>Yuvan Aves</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 34 -->
+    <div class="talk-item" data-type="Talk" data-category="Climate Change Forest Plants" data-year="2023" data-event="Standard">
+        <a href="talks/heal-lands-and-minds.html" target="_blank" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/0B4Xpwe7pCo/maxresdefault.jpg" alt="Redefining Urban Living: How can communities heal lands and minds?" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Redefining Urban Living: How can communities heal lands and minds?</h3>
+                <p>Shobha Menon</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 35 -->
+    <div class="talk-item" data-type="Talk" data-category="Climate Change Local issues Water" data-year="2023" data-event="Standard">
+        <a href="talks/unforeseen-toll-of-climate-change.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/PxvC5XZICZ8/maxresdefault.jpg" alt="Unforeseen Toll of Climate Change: Why Water is Becoming Expensive" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Unforeseen Toll of Climate Change: Why Water is Becoming Expensive</h3>
+                <p>Smitha TK</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 36 -->
+    <div class="talk-item" data-type="Talk" data-category="Activism Change Oceans" data-year="2023" data-event="Standard">
+        <a href="talks/community-livelihood-and-climate.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/oo5Qtjcnx2U/maxresdefault.jpg" alt="How does a community's livelihood fight tie into climate battle" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>How does a community's livelihood fight tie into climate battle</h3>
+                <p>Saravanan K</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 37 -->
+    <div class="talk-item" data-type="Talk" data-category="Climate Change Energy Oceans" data-year="2023" data-event="Standard">
+        <a href="talks/renewable-energy-from-oceans.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/E1ZzLrAYRAs/sddefault.jpg" alt="The Quest for Renewable Energy from Our Oceans" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>The Quest for Renewable Energy from Our Oceans</h3>
+                <p>Dr. Purnima Jalihal</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 38 -->
+    <div class="talk-item" data-type="Talk" data-category="Business Climate Change Law Recycling" data-year="2023" data-event="Standard">
+        <a href="talks/end-users-burden-of-recycling.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/TkSTCcfA4Co/maxresdefault.jpg" alt="Should end users bear the burden of recycling? Debunking the myth" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Should end users bear the burden of recycling? Debunking the myth</h3>
+                <p>Ann Anra</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Performance 39 -->
+    <div class="talk-item" data-type="Performance" data-category="History Music" data-year="2024" data-event="Salon">
+        <a href="talks/strings-of-thinai.html" target="_blank" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/AcYXg0DizMQ/maxresdefault.jpg" alt="Strings of Thinai | A musical Journey" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Performance</em></h6>
+                <h3>Strings of Thinai | A musical Journey</h3>
+                <p>Uru Paanar</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 40 -->
+    <div class="talk-item" data-type="Talk" data-category="Media News Psychology Social Change Social Interaction" data-year="2024" data-event="Salon">
+        <a href="talks/social-psychology-and-misinformation.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/VqzQLCeHa40/maxresdefault.jpg" alt="Is social psychology key to tackle misinformation?" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Is social psychology key to tackle misinformation?</h3>
+                <p>Dr. Sindhuja Sankaran</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 41 -->
+    <div class="talk-item" data-type="Talk" data-category="AI Media News Technology" data-year="2024" data-event="Salon">
+        <a href="talks/ai-eroding-democratic-trust-with-deepfakes.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/c1L2piPBz-4/maxresdefault.jpg" alt="How is AI eroding democratic trust with deepfakes?" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>How is AI eroding democratic trust with deepfakes?</h3>
+                <p>Nilesh Christopher</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 42 -->
+    <div class="talk-item" data-type="Talk" data-category="History Language Media News Storytelling" data-year="2024" data-event="Salon">
+        <a href="talks/history-used-to-spread-misinformation.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/jQRcPKc6TIQ/maxresdefault.jpg" alt="How is history used to spread misinformation?" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>How is history used to spread misinformation?</h3>
+                <p>Muralitharan Kasiviswanathan</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Talk 43 -->
+    <div class="talk-item" data-type="Talk" data-category="AI Internet Media News" data-year="2024" data-event="Salon">
+        <a href="talks/misinformation-major-short-term-threat.html" class="talk-info" style="text-decoration: none; color: inherit;">
+            <div class="video-wrapper">
+                <img src="https://img.youtube.com/vi/H0Oh-NmeVS0/maxresdefault.jpg" alt="Misinformation: a major short-term threat to humanity" class="thumbnail">
+            </div>
+            <div class="talk-info">
+                <h6><em>Talk</em></h6>
+                <h3>Misinformation: a major short-term threat to humanity</h3>
+                <p>Karen Rebelo</p>
+            </div>
+        </a>
+    </div>
+   
 </div>
 </section>
 
@@ -447,18 +924,18 @@
             const yearFilter = document.getElementById('year-select').value;
             const eventFilter = document.getElementById('event-select').value;
 
-            const talks = document.querySelectorAll('.talk-item');
+            const talk = document.querySelectorAll('.talk-item');
 
-            talks.forEach(talk => {
+            talk.forEach(talk => {
                 const type = talk.getAttribute('data-type');
-                const category = talk.getAttribute('data-category');
+                const categories = talk.getAttribute("data-category").split(" ");
                 const year = talk.getAttribute('data-year');
                 const event = talk.getAttribute('data-event');
 
                 if ((typeFilter === '' || type === typeFilter) &&
-                (categoryFilter === '' || category === categoryFilter) &&
-                (yearFilter === '' || year === yearFilter) &&
-                (eventFilter === '' || event === eventFilter)) {
+                    (categoryFilter === '' || categories.includes(categoryFilter)) &&
+                    (yearFilter === '' || year === yearFilter) &&
+                    (eventFilter === '' || event === eventFilter)) {
                     talk.style.display = 'block';
                 } else {
                     talk.style.display = 'none';
