@@ -1316,13 +1316,13 @@ footer {
 .talk-info h3 {
     font-size: 1.2rem;
     margin: 10px 0;
-    color: #333;
+    color: #c7241b;
 }
 
 .talk-info p {
     font-size: 1rem;
     margin: 0;
-    color: #666;
+    color : #0f204d;/* color: #666; */
 }
 
 /* Hover Effects */
@@ -1352,7 +1352,7 @@ footer {
 
 .filter-section select {
     padding: 10px;
-    margin: 10px;
+    /* margin: 10px; */
     font-size: 16px;
 }
 
