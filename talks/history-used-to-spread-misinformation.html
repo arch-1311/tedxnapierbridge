@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <title>TEDxNapier Bridge</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    .video-banner {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            background: black;
+        }
+
+        .video-banner iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .talk-details {
+            padding: 20px 80px;
+            /* max-width: 800px; */
+            margin: 20px auto;
+            text-align: left;
+            background: rgba(17, 17, 17, 0.05);
+        }
+
+        .talk-details h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .talk-details p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .speaker-info {
+            margin-top: 20px;
+        }
+
+        .speaker-info img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .speaker-info h3 {
+            font-size: 1.5rem;
+        }
+
+        .speaker-info p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media screen and (max-width: 768px) {
+            .video-banner {
+                height: 40vh;
+            }
+            .talk-details {
+                padding: 20px;
+            }
+            .talk-details h1 {
+                font-size: 1.5rem;
+            }
+
+            .talk-details p {
+                font-size: 0.9rem;
+            }
+
+            .speaker-info img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .speaker-info h3 {
+                font-size: 1.2rem;
+            }
+        }
+</style>
+<body>
+    <!-- <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div> -->
+    
+    <header>
+        <!-- Top Row with Vision and Social Media -->
+        <div class="top-row">
+            <div class="vision">
+                <span>Our vision is to be a catalyst for positive change, opening minds with inspiring ideas.</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/TEDxNapierBridge/"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/tedxnapierbridge/"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/tedxnapier"><i class="bi bi-twitter"></i></a>
+                <a href="mailto:team@tedxnapierbridge.com"><i class="bi bi-envelope"></i></a>
+            </div>
+        </div>
+        
+        <!-- Bottom Row with Logo, Navigation, and Donate -->
+        <div class="bottom-row d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="../home.html"><img class="img-fluid" src="../images/10-Logo.png" alt="Logo" style="width: 200px; height: auto;"></a>
+            </div>
+    
+            <!-- Navigation -->
+            <nav>
+                <ul class="menu">
+                  <li><a href="../home.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="">Attend <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="../conference.html">Conference</a></li>
+                      <li><a href="../salon.html">Salon</a></li>
+                      <li><a href="../adventure.html">Adventure X</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="../watch.html">Watch</a></li>
+                  <li><a href="../past-events.html">Past Events</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="">Connect <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="../donate.html">Donate</a></li>
+                      <li><a href="../volunteer.html">Volunteer</a></li>
+                      <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="">Partners <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="../current-partners.html">Current Partners</a></li>
+                      <li><a href="../become-partner.html">Become a Partner</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="">About <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                      <li><a href="../about.html">About Us</a></li>
+                      <li><a href="../team.html">Team</a></li>
+                    </ul>
+                  </li>
+                  
+                  <!-- <li><a href="../speakers.html">Speakers</a></li> -->
+                </ul>
+            </nav>
+              
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <!-- Donate Button -->
+            <div class="donate-btn">
+                <a href="#">DONATE</a>
+            </div>
+        </div>
+    </header>
+    <br><br>
+    <div class="video-banner">
+        <iframe 
+            src="https://www.youtube.com/embed/jQRcPKc6TIQ"
+            title="How is history used to spread misinformation?"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="talk-details">
+        <p><em>TEDxNapierBridge | TruthCon: Tackling Misinformation | 2024, History, Language, Media, News, Storytelling</em></p>
+        <h1>How is history used to spread misinformation?</h1>
+        <p>The past is often doctored to manipulate the present, says Muralitharan, a journalist and Tamil history enthusiast. He explores how historical facts are often misrepresented and tampered with in order to manipulate people in the present.</p>
+        <div class="speaker-info">
+            <h3>Muralitharan Kasiviswanathan </h3>
+            <p>Muralitharan is a distinguished journalist at The Collective Newsroom (BBC). With over two decades of experience, covering Tamil Nadu's politics, history, society, and cinema for media outlets like BBC Tamil, India Today - Tamil, NDTV - Hindu, and Puthiya Thalaimurai, his insightful reporting extends to Sri Lankan affairs, including pivotal events like the United Nations Human Rights Commission sessions in Geneva. He extends his expertise to the literary circle, with his notable translations including "A Sudra's Story" and "Scoop," alongside co-authoring the book "Katchatheevu”. </p>
+        </div>
+    </div>
+    <br><br><br><hr/>
+    <div class="footer">
+        <div class="contact-container">
+            <a href="https://www.instagram.com/tedxnapierbridge/" target="_blank" class="contact-icon">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="mailto:team@tedxnapierbridge.com" class="contact-icon">
+                <i class="bi bi-envelope"></i>
+            </a>
+            <a href="https://www.facebook.com/TEDxNapierBridge/" target="_blank" class="contact-icon">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://twitter.com/tedxnapier" target="_blank" class="contact-icon">
+                <i class="bi bi-twitter"></i>
+            </a>
+        </div>
+        <br/>
+        <div><strong>This independently organized TEDx event is operated under license from <a href="http://ted.com/" target="_blank" style = "color: #E62B1E;font-weight: bold;">TED</a>.</strong></div>
+        <br/>
+    </div>
+
+   
+    <script src="../scripts.js"></script>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
+    
+</body>
+</html>
